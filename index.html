@@ -530,6 +530,29 @@
   .legal-list .legal{margin-top:0}
   #produit,#compatibilite,#tests,#garanties,#liste,#faq,#a-propos,#kit-media,#contact{scroll-margin-top:80px}
   @media (max-width:760px){#produit,#compatibilite,#tests,#garanties,#liste,#faq,#a-propos,#kit-media,#contact{scroll-margin-top:120px}}
+  /* ---------- Animations pixel façon GIF ---------- */
+  .runway{position:relative;height:98px;margin-top:22px;border-bottom:3px solid var(--violet);box-shadow:0 3px 0 var(--deep);overflow:hidden;max-width:520px;
+    background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(123,60,240,.18) 22px 24px) bottom/100% 8px no-repeat}
+  .runway .spr{position:absolute;image-rendering:pixelated}
+  .runner{width:48px;height:48px;left:0;bottom:0;will-change:transform}
+  .rcoin{width:26px;height:26px;bottom:42px}
+  .rcoin.got{visibility:hidden}
+  .score{position:absolute;right:0;top:0;font:400 10px/1 var(--pixel);color:var(--muted)}
+  .score b{color:var(--gold);font-weight:400}
+  .insert{position:absolute;left:0;top:0;font:400 10px/1 var(--pixel);color:var(--pink)}
+  .plus{position:absolute;font:400 10px/1 var(--pixel);color:var(--gold);text-shadow:2px 2px 0 var(--deep);animation:up .8s steps(6) forwards;pointer-events:none}
+  .head-spr{width:40px;height:40px;animation:hop 1.2s steps(4) infinite;image-rendering:pixelated}
+  @keyframes hop{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .mini-slots i.gift{display:grid;place-items:center;padding:0}
+  .mini-slots .chest{width:100%;height:100%}
+  .lvlup{position:relative;display:flex;align-items:center;gap:14px;padding:12px 14px;border:2px solid var(--gold);background:var(--void);overflow:hidden}
+  .lvlup .spr{width:48px;height:48px}
+  .lv-t{font:400 16px/1 var(--pixel);color:var(--gold);text-shadow:3px 3px 0 var(--deep);animation:flash .5s steps(2) 6}
+  .lv-x{font:400 10px/1 var(--pixel);color:var(--cyan);margin-left:auto}
+  @keyframes flash{50%{color:var(--pink)}}
+  .burst i{position:absolute;width:6px;height:6px;left:40px;top:30px;animation:boom .9s steps(8) forwards}
+  @keyframes boom{to{transform:translate(var(--dx),var(--dy));opacity:0}}
+  @media (prefers-reduced-motion:reduce){.head-spr,.lv-t,.burst i,.plus{animation:none}}
 </style>
 </head>
 <body>
@@ -567,6 +590,12 @@
         <a class="btn alt" href="#produit">Voir en 3D</a>
       </div>
       <p class="slogan">Rétro par passion. Immersif par vision.</p>
+      <div class="runway" aria-hidden="true">
+        <span class="score">SCORE <b id="score">000000</b></span>
+        <span class="insert blink">INSERT COIN</span>
+        <canvas class="spr runner" data-sprite="runner"></canvas>
+        <canvas class="spr rcoin" data-sprite="coin"></canvas><canvas class="spr rcoin" data-sprite="coin"></canvas><canvas class="spr rcoin" data-sprite="coin"></canvas><canvas class="spr rcoin" data-sprite="coin"></canvas>
+      </div>
     </div>
     <div class="screen hero-shot">
       <img src="visor-real.webp" alt="NEON VISOR en rendu réaliste : casque VR à coque violette, visière noire vernie, bande lumineuse cyan et contour LED rose, sur un podium néon" width="1060" height="710">
@@ -581,7 +610,7 @@
 
   <!-- 01 PRODUIT -->
   <section class="world vitrine" id="produit" aria-labelledby="h-produit">
-    <div class="world-head"><span class="wtag">01 · Produit</span><h2 id="h-produit">NEON VISOR en 3D</h2></div>
+    <div class="world-head"><span class="wtag">01 · Produit</span><canvas class="spr head-spr" data-sprite="vr" aria-hidden="true"></canvas><h2 id="h-produit">NEON VISOR en 3D</h2></div>
     <p class="sec-lead">Fais-le tourner, choisis ton édition, regarde ce qu’il y a dans la boîte.</p>
 
     <div class="shop">
@@ -656,7 +685,7 @@
 
   <!-- 02 COMPATIBILITÉ -->
   <section class="world" id="compatibilite" aria-labelledby="h-compat">
-    <div class="world-head"><span class="wtag">02 · Compatibilité</span><h2 id="h-compat">Il va sur mon casque ?</h2></div>
+    <div class="world-head"><span class="wtag">02 · Compatibilité</span><canvas class="spr head-spr" data-sprite="pad" aria-hidden="true"></canvas><h2 id="h-compat">Il va sur mon casque ?</h2></div>
     <p class="sec-lead">On vise d’abord les casques les plus répandus : Meta représente environ 3 casques sur 4 vendus.</p>
 
     <div class="compat-grid">
@@ -669,7 +698,7 @@
 
   <!-- 03 TESTS ET AVIS -->
   <section class="world" id="tests" aria-labelledby="h-tests">
-    <div class="world-head"><span class="wtag">03 · Tests et avis</span><h2 id="h-tests">Testé par des joueurs avant d’être vendu</h2></div>
+    <div class="world-head"><span class="wtag">03 · Tests et avis</span><canvas class="spr head-spr" data-sprite="star" aria-hidden="true"></canvas><h2 id="h-tests">Testé par des joueurs avant d’être vendu</h2></div>
 
     <div class="quest">
       <div>
@@ -700,7 +729,7 @@
 
   <!-- 04 GARANTIES ET AVANTAGES -->
   <section class="world" id="garanties" aria-labelledby="h-gar">
-    <div class="world-head"><span class="wtag">04 · Garanties</span><h2 id="h-gar">Nos engagements à l’ouverture des ventes</h2></div>
+    <div class="world-head"><span class="wtag">04 · Garanties</span><canvas class="spr head-spr" data-sprite="heart" aria-hidden="true"></canvas><h2 id="h-gar">Nos engagements à l’ouverture des ventes</h2></div>
     <p class="sec-lead">Le produit n’est pas encore en vente. Voici ce qui s’appliquera dès la première commande.</p>
 
     <ul class="perks">
@@ -725,7 +754,7 @@
             <li><b>Remplis les 10 cases</b><span>Ta barre d'XP monte à chaque passage.</span></li>
             <li><b>Débloque ton bonus</b><span>La 10e case te donne un bonus offert.</span></li>
           </ol>
-          <div class="mini-slots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i class="gift">★</i></div>
+          <div class="mini-slots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i class="gift"><canvas class="spr chest" data-sprite="chest"></canvas></i></div>
         </div>
       </div>
     </div>
@@ -733,7 +762,7 @@
 
   <!-- 05 LISTE D'ATTENTE -->
   <section class="world" id="liste" aria-labelledby="h-liste">
-    <div class="world-head"><span class="wtag">05 · Liste d’attente</span><h2 id="h-liste">Sois prévenu du lancement</h2></div>
+    <div class="world-head"><span class="wtag">05 · Liste d’attente</span><canvas class="spr head-spr" data-sprite="coin" aria-hidden="true"></canvas><h2 id="h-liste">Sois prévenu du lancement</h2></div>
     <p class="sec-lead">30 secondes. Tes réponses nous aident à choisir le premier casque, l’édition la plus demandée et les testeurs.</p>
 
     <div class="signup">
@@ -767,6 +796,7 @@
         <button class="btn" type="submit">► Valider mon inscription</button>
       </form>
       <div class="wdone" id="wdone" hidden tabindex="-1">
+        <div class="lvlup" aria-hidden="true"><canvas class="spr" data-sprite="chest"></canvas><span class="lv-t">LEVEL UP !</span><span class="lv-x">+500 XP</span><div class="burst"></div></div>
         <div class="who k-c">Inscription prête ›</div>
         <p>Ta messagerie s'ouvre avec ton message pour <b>emg.gaming@gmail.com</b> : il ne reste qu'à l'envoyer.</p>
         <p class="small">Rien ne s'ouvre ? Copie le message et envoie-le toi-même.</p>
@@ -788,7 +818,7 @@
 
   <!-- 06 FAQ -->
   <section class="world" id="faq" aria-labelledby="h-faq">
-    <div class="world-head"><span class="wtag">06 · FAQ</span><h2 id="h-faq">Tes questions</h2></div>
+    <div class="world-head"><span class="wtag">06 · FAQ</span><canvas class="spr head-spr" data-sprite="key" aria-hidden="true"></canvas><h2 id="h-faq">Tes questions</h2></div>
 
     <div class="faq">
       <details><summary>Quand sort le NEON VISOR ?</summary><p>Après les tests du prototype. La date sera annoncée d'abord aux inscrits de la liste d'attente.</p></details>
@@ -803,7 +833,7 @@
 
   <!-- 07 À PROPOS -->
   <section class="world" id="a-propos" aria-labelledby="h-about">
-    <div class="world-head"><span class="wtag">07 · À propos</span><h2 id="h-about">EMG, l’équipe derrière le kit</h2></div>
+    <div class="world-head"><span class="wtag">07 · À propos</span><canvas class="spr head-spr" data-sprite="runner" aria-hidden="true"></canvas><h2 id="h-about">EMG, l’équipe derrière le kit</h2></div>
     <p class="sec-lead">EMG conçoit des accessoires qui rendent le jeu vidéo et la VR plus immersifs, avec un style rétro assumé.</p>
 
     <div class="sub" id="mission">
@@ -874,7 +904,7 @@
 
   <!-- 08 KIT MÉDIA -->
   <section class="world" id="kit-media" aria-labelledby="h-kit">
-    <div class="world-head"><span class="wtag">08 · Kit média</span><h2 id="h-kit">Pour les créateurs, salons et partenaires</h2></div>
+    <div class="world-head"><span class="wtag">08 · Kit média</span><canvas class="spr head-spr" data-sprite="bolt" aria-hidden="true"></canvas><h2 id="h-kit">Pour les créateurs, salons et partenaires</h2></div>
     <p class="sec-lead">Logo, couleurs et supports prêts à l’emploi. Besoin d’un fichier ? Écris-nous.</p>
 
     <div class="sub" id="identite">
@@ -942,7 +972,7 @@
 
   <!-- 09 CONTACT -->
   <section class="world" id="contact" aria-labelledby="h-contact">
-    <div class="world-head"><span class="wtag">09 · Contact</span><h2 id="h-contact">Une question, une idée ?</h2></div>
+    <div class="world-head"><span class="wtag">09 · Contact</span><canvas class="spr head-spr" data-sprite="heart" aria-hidden="true"></canvas><h2 id="h-contact">Une question, une idée ?</h2></div>
 
     <div class="contact two">
       <div class="ccard"><div class="col-h k-p">Réseaux sociaux</div><p>Nos comptes <b>@emg.gaming</b> sont en cours d'ouverture. Abonne-toi pour suivre les tests du prototype.</p><div class="socials"><a class="sbtn ig" href="https://www.instagram.com/emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg><span>Instagram</span></a><a class="sbtn tt" href="https://www.tiktok.com/@emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path></svg><span>TikTok</span></a><a class="sbtn fb" href="https://www.facebook.com/emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg><span>Facebook</span></a><a class="sbtn li" href="https://www.linkedin.com/company/emg-gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg><span>LinkedIn</span></a></div></div>
@@ -994,21 +1024,17 @@
   }
   addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-  // Pixel sprites
-  const P={'.':null,c:'#00D4F0',p:'#FF1B8D',v:'#7B3CF0',w:'#F2F1FF',g:'#FFD21F',d:'#3D1A9E',k:'#10102A'};
-  const S={
-    vr:["................","................","................","..vvvvvvvvvvvv..",".vwwwwwwwwwwwwv.",".vcccccvvcccccv.",".vcccwcvvcccwcv.",".vcccccvvcccccv.",".vcccccv.vccccv.",".vvvvvv...vvvvv.","..d..........d..","..d..........d..","..dddddddddddd..","................","................","................"],
-    pad:["................","................","................","...vvvv..vvvv...","..vvvvvvvvvvvvv.",".vvwvvvvvvvvgvv.",".vwwwvvvvvvcvpv.",".vvwvvwwvwwvvvv.",".vvvvvvvvvvvvvv.",".vvvvv....vvvvv.",".vvvv......vvvv.","..vv........vv..","................","................","................","................"],
-    star:["................",".......gg.......",".......gg.......","......gggg......","......gggg......","gggggggggggggggg",".gggggggggggggg.","..gggggggggggg..","...gggggggggg...","...ggggggggggg..","..gggggggggggg..","..ggggg..ggggg..",".gggg......gggg.",".ggg........ggg.","................","................"]
-    ,bolt:["................",".........ggg....","........ggg.....",".......ggg......","......ggg.......",".....gggggggg...","....gggggggg....",".........ggg....","........ggg.....",".......ggg......","......ggg.......",".....gg.........","....g...........","................","................","................"],
-    key:["................","................","...pppp.........","..pp..pp........","..p....p........","..p....ppppppppp","..p....p...p..p.","..pp..pp...p..p.","...pppp.........","................","................","................","................","................","................","................"],
-    heart:["................","................","..ccc.....ccc...",".ccccc...ccccc..",".cc..ccccc..cc..",".c...........c..",".c...........c..",".cc.........cc..","..cc.......cc...","...cc.....cc....","....cc...cc.....",".....cc.cc......","......ccc.......",".......c........","................","................"],
-    coin:["................",".....gggggg.....","...gg......gg...","..g...gggg...g..","..g..gg..gg..g..",".g...g....g...g.",".g.......gg...g.",".g......gg....g.",".g.....gg.....g.",".g............g.","..g....gg....g..","..g....gg....g..","...gg......gg...",".....gggggg.....","................","................"]
-  };
-  document.querySelectorAll('canvas[data-sprite]').forEach(cv=>{
-    const x=cv.getContext('2d');const rows=S[cv.dataset.sprite];
-    rows.forEach((r,y)=>[...r].forEach((ch,xx)=>{if(P[ch]){x.fillStyle=P[ch];x.fillRect(xx,y,1,1);}}));
-  });
+  // Pixel sprites animés (façon GIF) : sprites originaux EMG, 16×16, ~8 images/s
+  const P={'.':null,c:'#00D4F0',p:'#FF1B8D',v:'#7B3CF0',w:'#F2F1FF',g:'#FFD21F',d:'#3D1A9E',k:'#10102A',o:'#FF9F1C'};
+  const S={"runner":[["................",".....vvvvvv.....","....vvvvvvvv....","...vvvvvvvvvv...","...vvvvkkkkkkp..","...vvvvkcccwcp..","...vvvvkcccccp..","...vvvvvkkkkk...","....vvvvvvvv....","....dppppppd....","...ppppppppwp...","..pp.pppppp.pp..","....dddddddd....","...dd.....ddd...","..dd.......dd...",".ww.........ww.."],["................","................",".....vvvvvv.....","....vvvvvvvv....","...vvvvvvvvvv...","...vvvvkkkkkkp..","...vvvvkcccwcp..","...vvvvkcccccp..","...vvvvvkkkkk...","....vvvvvvvv....","....dppppppd....","....pppppppwp...","....ppppppp.....","....dddddddd....",".....dd..dd.....",".....dd..dd....."],["................",".....vvvvvv.....","....vvvvvvvv....","...vvvvvvvvvv...","...vvvvkkkkkkp..","...vvvvkcccwcp..","...vvvvkcccccp..","...vvvvvkkkkk...","....vvvvvvvv....","....dppppppd....","...pwppppppppp..","..pp.pppppp.....","....dddddddd....","....ddd...dd....","...ddd.....dd...","..www.......ww.."],["................","................",".....vvvvvv.....","....vvvvvvvv....","...vvvvvvvvvv...","...vvvvkkkkkkp..","...vvvvkcccwcp..","...vvvvkcccccp..","...vvvvvkkkkk...","....vvvvvvvv....","....dppppppd....","...pwppppppp....",".....ppppppp....","....dddddddd....",".....dd..dd.....",".....dd..dd....."]],"coin":[["................",".....gggggg.....","...ggoooooogg...","..googgggggoog..","..gogggwgggggog.","..goggwwgggggog.",".gogggwggggggog.",".gogggwggggggog.",".gogggggggggoog.",".goggggggggggog.","..gogggggggggog.","..googgggggoog..","...ggoooooogg...",".....gggggg.....","................","................"],["................","......gggg......",".....ggoooog....","....goggggoo....","....goggwgggo...","....gogwwgggo...","....goggggggo...","....goggggggo...","....goggggggo...","....goggggggo...","....goggggggo...","....goggggoo....",".....ggoooog....","......gggg......","................","................"],["................",".......gg.......",".......go.......",".......ggg......",".......ggg......",".......gwg......","......gggg......","......gggg......","......gggg......","......gggg......",".......ggg......",".......ggg......",".......go.......",".......gg.......","................","................"],["................","......gggg......",".....ggoooog....","....goggggoo....","....goggwgggo...","....gogwwgggo...","....goggggggo...","....goggggggo...","....goggggggo...","....goggggggo...","....goggggggo...","....goggggoo....",".....ggoooog....","......gggg......","................","................"]],"heart":[["................","..ppp.....ppp...",".ppppp...ppppp..","ppwwppp.ppppppp.","ppwpppppppppppp.","ppppppppppppppp.","ppppppppppppppp.",".ppppppppppppp..","..ppppppppppp...","...ppppppppp....","....ppppppp.....",".....ppppp......","......ppp.......",".......p........","................","................"],["................","................","...pp.....pp....","..pppp...pppp...","..pwpppppppppp..","..ppppppppppp...","..ppppppppppp...","...ppppppppp....","....ppppppp.....",".....ppppp......","......ppp.......",".......p........","................","................","................","................"],["................","..ppp.....ppp...",".ppppp...ppppp..","ppwwppp.ppppppp.","ppwpppppppppppp.","ppppppppppppppp.","ppppppppppppppp.",".ppppppppppppp..","..ppppppppppp...","...ppppppppp....","....ppppppp.....",".....ppppp......","......ppp.......",".......p........","................","................"],["................","..ppp.....ppp...",".ppppp...ppppp..","ppwwppp.ppppppp.","ppwpppppppppppp.","ppppppppppppppp.","ppppppppppppppp.",".ppppppppppppp..","..ppppppppppp...","...ppppppppp....","....ppppppp.....",".....ppppp......","......ppp.......",".......p........","................","................"]],"star":[["................",".......gg.......",".......gg.......","......gggg......","......gggg......","gggggggwgggggggg",".ggggggwwgggggg.","..gggggggggggg..","...gggggggggg...","...ggggggggggg..","..gggggggggggg..","..ggggg..ggggg..",".gggg......gggg.",".ggg........ggg.","................","................"],["................",".w.....gg.......",".......gg.....w.","......gggg......","......gggg......","gggggggwgggggggg",".ggggggwwgggggg.","..gggggggggggg..","...gggggggggg...","...ggggggggggg..","..gggggggggggg..","..ggggg..ggggg..",".gggg......gggg.",".ggg........ggg.","................","................"],[".w............w.",".......gg......w","w......gg.......","......gggg......","......gggg......","gggggggwgggggggg",".ggggggwwgggggg.","..gggggggggggg..","...gggggggggg...","...ggggggggggg..","..gggggggggggg..","..ggggg..ggggg..",".gggg......gggg.",".ggg........ggg.","................","................"],["................",".......gg.......",".......gg.......","......gggg......","......gggg......","gggggggwgggggggg",".ggggggwwgggggg.","..gggggggggggg..","...gggggggggg...","...ggggggggggg..","..gggggggggggg..","..ggggg..ggggg..",".gggg......gggg.",".ggg........ggg.","................","................"]],"bolt":[["................",".........ggg....","........ggg.....",".......ggg......","......ggg.......",".....gggggggg...","....gggggggg....",".........ggg....","........ggg.....",".......ggg......","......ggg.......",".....gg.........","....g...........","................","................","................"],["................",".........ggg....","........ggg.....",".......ggg......","......ggg.......",".....gggggggg...","....gggggggg....",".........ggg....","........ggg.....",".......ggg......","......ggg.......",".....gg.........","....g...........","................","................","................"],["................",".........www....","........www.....",".......www......","......www.......",".....wwwwwwww...","....wwwwwwww....",".........www....","........www.....",".......www......","......www.......",".....ww.........","....w...........","................","................","................"],["................",".........ggg....","........ggg.....",".......ggg......","......ggg.......",".....gggggggg...","....gggggggg....",".........ggg....","........ggg.....",".......ggg......","......ggg.......",".....gg.........","....g...........","................","................","................"],["................",".........ooo....","........ooo.....",".......ooo......","......ooo.......",".....oooooooo...","....oooooooo....",".........ooo....","........ooo.....",".......ooo......","......ooo.......",".....oo.........","....o...........","................","................","................"],["................",".........ggg....","........ggg.....",".......ggg......","......ggg.......",".....gggggggg...","....gggggggg....",".........ggg....","........ggg.....",".......ggg......","......ggg.......",".....gg.........","....g...........","................","................","................"]],"vr":[["................","................","................","..vvvvvvvvvvvv..",".vwwwwwwwwwwwwv.","pvcccccvvcccccvp","pvcccwcvvcccwcvp",".vcccccvvcccccv.",".vcccccv.vccccv.",".vvvvvv...vvvvv.","................","................","................","................","................","................"],["................","................","................","..vvvvvvvvvvvv..",".vwwwwwwwwwwwwv.","cvpppppvvpppppvc","cvpppwpvvpppwpvc",".vpppppvvpppppv.",".vpppppv.vppppv.",".vvvvvv...vvvvv.","................","................","................","................","................","................"],["................","................","................","..vvvvvvvvvvvv..",".vwwwwwwwwwwwwv.","pvgggggvvgggggvp","pvgggwgvvgggwgvp",".vgggggvvgggggv.",".vgggggv.vggggv.",".vvvvvv...vvvvv.","................","................","................","................","................","................"],["................","................","................","..vvvvvvvvvvvv..",".vwwwwwwwwwwwwv.","pvcccccvvcccccvp","pvcccwcvvcccwcvp",".vcccccvvcccccv.",".vcccccv.vccccv.",".vvvvvv...vvvvv.","................","................","................","................","................","................"]],"key":[["................","................","...pppp.........","..pp..pp........","..p....p........","..p....ppppppppp","..p....p...p..p.","..pp..pp...p..p.","...pppp.........","................","................","................","................","................","................","................"],["................","................","...pppp.........","..pp..pp........","..p....p........","..p....ppppppppp","..p....p...p..p.","..pp..pp...p..p.","...pppp.........","................","................","................","................","................","................","................"],["................","................","...pppp.........","..ppwwpp........","..p....p........","..p....ppppppppp","..p....p...p..p.","..pp..pp...p..p.","...pppp.........","................","................","................","................","................","................","................"],["................","................","...pppp.........","..pp..pp........","..p....p........","..p....ppppppppp","..p....p...p..p.","..pp..pp...p..p.","...pppp.........","................","................","................","................","................","................","................"]],"pad":[["................","................","................","...vvvv..vvvv...","..vvvvvvvvvvvvv.",".vvwvvvvvvvvgvv.",".vwwwvvvvvvcvpv.",".vvwvvwwvwwvvvv.",".vvvvvvvvvvvvvv.",".vvvvv....vvvvv.",".vvvv......vvvv.","..vv........vv..","................","................","................","................"],["................","................","................","...vvvv..vvvv...","..vvvvvvvvvvvvv.",".vvwvvvvvvvvwvv.",".vwwwvvvvvvcvpv.",".vvwvvwwvwwvvvv.",".vvvvvvvvvvvvvv.",".vvvvv....vvvvv.",".vvvv......vvvv.","..vv........vv..","................","................","................","................"],["................","................","................","...vvvv..vvvv...","..vvvvvvvvvvvvv.",".vvwvvvvvvvvgvv.",".vwwwvvvvvvcvwv.",".vvwvvwwvwwvvvv.",".vvvvvvvvvvvvvv.",".vvvvv....vvvvv.",".vvvv......vvvv.","..vv........vv..","................","................","................","................"],["................","................","................","...vvvv..vvvv...","..vvvvvvvvvvvvv.",".vvwvvvvvvvvgvv.",".vwwwvvvvvvwvpv.",".vvwvvwwvwwvvvv.",".vvvvvvvvvvvvvv.",".vvvvv....vvvvv.",".vvvv......vvvv.","..vv........vv..","................","................","................","................"]],"chest":[["................","................","................","...dddddddddd...","..dooooooooood..","..doooggoooood..","..dddddggddddd..","..doooooooooood.","..doooooooooood.","..doooooooooood.","..dddddddddddd..","................","................","................","................","................"],["................","................","................","...dddddddddd...","..dooooooooood..","..doooggoooood..","..dddddggddddd..","..doooooooooood.","..doooooooooood.","..doooooooooood.","..dddddddddddd..","................","................","................","................","................"],["...g....g...g...","....g..g..g.....","...dddddddddd...","..d..........d..","..dwwgwwgwwgwd..","..dgggggggggggd.","..dddddggddddd..","..doooooooooood.","..doooooooooood.","..doooooooooood.","..dddddddddddd..","................","................","................","................","................"],["...g....g...g...","....g..g..g.....","...dddddddddd...","..d..........d..","..dwwgwwgwwgwd..","..dgggggggggggd.","..dddddggddddd..","..doooooooooood.","..doooooooooood.","..doooooooooood.","..dddddddddddd..","................","................","................","................","................"]]};
+  const FPS={"runner":10,"coin":8,"heart":4,"star":4,"bolt":8,"vr":3,"key":3,"pad":3,"chest":2};
+  const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const drawFrame=(cv,f)=>{const x=cv.getContext('2d');x.clearRect(0,0,16,16);f.forEach((r,y)=>{for(let i=0;i<16;i++){const col=P[r[i]];if(col){x.fillStyle=col;x.fillRect(i,y,1,1);}}});};
+  const live=new Set();
+  const io=new IntersectionObserver(es=>es.forEach(e=>{e.isIntersecting?live.add(e.target):live.delete(e.target);}));
+  window.EMGsprite=cv=>{const fr=S[cv.dataset.sprite];if(!fr)return;cv.width=16;cv.height=16;cv._f=0;cv._t=Math.random()*1000;drawFrame(cv,fr[0]);if(!still&&fr.length>1)io.observe(cv);};
+  document.querySelectorAll('canvas[data-sprite]').forEach(window.EMGsprite);
+  if(!still){let last=performance.now();const tick=now=>{const dt=now-last;last=now;live.forEach(cv=>{const fr=S[cv.dataset.sprite];cv._t+=dt;const step=1000/(FPS[cv.dataset.sprite]||6);if(cv._t>=step){cv._t%=step;cv._f=(cv._f+1)%fr.length;drawFrame(cv,fr[cv._f]);}});requestAnimationFrame(tick);};requestAnimationFrame(tick);}
 
   // Vote (local only)
   const btns=[...document.querySelectorAll('.choice')];const toast=document.getElementById('toast');
@@ -1470,6 +1496,52 @@
   const openFromHash = h => { const d = h && document.getElementById(h.slice(1)); if (d && d.tagName === 'DETAILS') d.open = true; };
   document.addEventListener('click', e => { const a = e.target.closest('a[href^="#"]'); if (a) openFromHash(a.getAttribute('href')); });
   openFromHash(location.hash);
+})();
+</script>
+<script>
+/* Mini-jeu de l'accueil : le joueur court, saute et attrape les pièces (boucle façon GIF) */
+(function(){
+  const run = document.querySelector('.runway'); if (!run) return;
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hero = run.querySelector('.runner'), coins = [...run.querySelectorAll('.rcoin')], sc = document.getElementById('score');
+  let W = run.clientWidth, x = -60, score = 0, onScreen = true;
+  const place = () => { W = run.clientWidth; coins.forEach((c, i) => { c.style.left = Math.round(W * (0.2 + i * 0.2)) + 'px'; c.classList.remove('got'); }); };
+  place(); addEventListener('resize', place);
+  if (still) { hero.style.transform = 'translateX(' + Math.round(W * 0.1) + 'px)'; return; }
+  new IntersectionObserver(es => { onScreen = es[0].isIntersecting; }).observe(run);
+  let last = performance.now();
+  const loop = now => {
+    const dt = Math.min(50, now - last); last = now;
+    if (onScreen) {
+      x += dt * 0.16;
+      if (x > W + 20) { x = -60; place(); }
+      // saut : quand une pièce approche, parabole
+      let y = 0;
+      coins.forEach(c => {
+        const cx = parseFloat(c.style.left), d = cx - (x + 24);
+        if (d > -40 && d < 40) y = Math.max(y, Math.round((1 - (d / 40) ** 2) * 30 / 3) * 3);
+        if (!c.classList.contains('got') && Math.abs(d) < 8) {
+          c.classList.add('got'); score += 100; sc.textContent = String(score).padStart(6, '0');
+          const p = document.createElement('span'); p.className = 'plus'; p.textContent = '+100'; p.style.left = cx + 'px'; p.style.bottom = '64px'; run.appendChild(p); setTimeout(() => p.remove(), 800);
+        }
+      });
+      hero.style.transform = 'translate(' + Math.round(x / 2) * 2 + 'px,' + (-y) + 'px)';
+    }
+    requestAnimationFrame(loop);
+  };
+  requestAnimationFrame(loop);
+})();
+/* LEVEL UP : confettis pixel quand l'inscription est prête */
+(function(){
+  const done = document.getElementById('wdone'); if (!done) return;
+  const burst = done.querySelector('.burst'); const cols = ['#00D4F0', '#FF1B8D', '#FFD21F', '#7B3CF0', '#F2F1FF'];
+  new MutationObserver(() => {
+    if (done.hidden || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    burst.innerHTML = '';
+    for (let i = 0; i < 18; i++) { const b = document.createElement('i'); const a = Math.random() * Math.PI * 2, r = 40 + Math.random() * 90;
+      b.style.background = cols[i % cols.length]; b.style.setProperty('--dx', Math.round(Math.cos(a) * r / 4) * 4 + 'px'); b.style.setProperty('--dy', Math.round(Math.sin(a) * r / 4) * 4 + 'px'); burst.appendChild(b); }
+    done.querySelectorAll('canvas[data-sprite]').forEach(c => window.EMGsprite && window.EMGsprite(c));
+  }).observe(done, { attributes: true, attributeFilter: ['hidden'] });
 })();
 </script>
 
