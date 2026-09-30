@@ -1574,6 +1574,22 @@
   }).observe(done, { attributes: true, attributeFilter: ['hidden'] });
 })();
 </script>
+<script>
+/* Téléchargement des GIF : lien normal sur le site hébergé, capacité "downloads" dans la vitrine claude.ai */
+(function(){
+  const links = document.querySelectorAll('a.dl'); if (!links.length) return;
+  let dl = null;
+  if (window.claude && claude.use) claude.use('downloads').then(n => { dl = n; }).catch(() => {});
+  links.forEach(a => a.addEventListener('click', async e => {
+    if (!dl) return;               // site hébergé : le lien "download" classique fait le travail
+    e.preventDefault();
+    try {
+      const blob = await (await fetch(a.getAttribute('href'))).blob();
+      await dl.save({ filename: a.getAttribute('href').split('/').pop(), data: blob });
+    } catch (err) { /* refus ou indisponible : rien à faire */ }
+  }));
+})();
+</script>
 
 </body>
 </html>
