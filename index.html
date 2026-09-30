@@ -567,6 +567,34 @@
   .gif.small img{width:96px;margin:18px auto 4px;background:none}
   .gif figcaption{font-style:normal}
   .gif figcaption span{font-style:normal}
+  /* ---------- GIF intégrés ---------- */
+  .gifi{display:block;image-rendering:pixelated;max-width:100%;height:auto}
+  .hero-gif{margin-top:22px;max-width:480px;border:2px solid var(--line);box-shadow:6px 6px 0 var(--deep)}
+  .hero-gif .gifi{width:100%}
+  .why-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:20px;align-items:stretch}
+  @media (max-width:900px){.why-grid{grid-template-columns:1fr}}
+  .gif-card{margin:0;background:#07070F;border:2px solid var(--line);display:grid;place-items:center;padding:8px}
+  .gif-card .gifi{width:100%}
+  .pillars.four.two-col{grid-template-columns:1fr 1fr}
+  @media (max-width:560px){.pillars.four.two-col{grid-template-columns:1fr}}
+  .sticker{width:56px;height:56px}
+  .reviews-empty.with-gif{grid-template-columns:56px 1fr;column-gap:14px;align-items:center}
+  .reviews-empty.with-gif .sticker{grid-row:span 2}
+  .coin-line{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+  .coin-line .phare-lead{margin:0}
+  .coin-gif{width:64px;height:64px;flex:none}
+  .lvl-gif{width:100%;max-width:420px;border:0}
+  .why .sticker{margin-bottom:10px}
+  .press-band{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center;padding-block:clamp(40px,6vw,72px);border-top:2px dashed var(--line)}
+  @media (max-width:860px){.press-band{grid-template-columns:1fr}}
+  .press-link{display:block;border:3px solid var(--line);box-shadow:0 0 0 6px var(--panel),0 0 50px rgba(0,212,240,.15)}
+  .press-link:hover{border-color:var(--gold)}
+  .press-link .gifi{width:100%}
+  .pb-t{font:400 clamp(28px,3.6vw,40px)/1.1 var(--display);margin:0 0 10px}
+  .pb-s{color:var(--muted);font-size:18px;margin:0 0 22px;max-width:44ch}
+  .press-band .btns{align-items:center}
+  .sticker.inline{width:44px;height:44px}
+  @media (prefers-reduced-motion:reduce){.gifi{animation:none}}
 </style>
 </head>
 <body>
@@ -604,12 +632,7 @@
         <a class="btn alt" href="#produit">Voir en 3D</a>
       </div>
       <p class="slogan">Rétro par passion. Immersif par vision.</p>
-      <div class="runway" aria-hidden="true">
-        <span class="score">SCORE <b id="score">000000</b></span>
-        <span class="insert blink">INSERT COIN</span>
-        <canvas class="spr runner" data-sprite="runner"></canvas>
-        <canvas class="spr rcoin" data-sprite="coin"></canvas><canvas class="spr rcoin" data-sprite="coin"></canvas><canvas class="spr rcoin" data-sprite="coin"></canvas><canvas class="spr rcoin" data-sprite="coin"></canvas>
-      </div>
+      <div class="hero-gif"><img class="gifi " src="gifs/emg-joueur.gif" alt="Animation : le joueur EMG court et attrape des pièces" width="480" height="180" loading="lazy"></div>
     </div>
     <div class="screen hero-shot">
       <img src="visor-real.webp" alt="NEON VISOR en rendu réaliste : casque VR à coque violette, visière noire vernie, bande lumineuse cyan et contour LED rose, sur un podium néon" width="1060" height="710">
@@ -673,11 +696,14 @@
 
     <div class="sub" id="pourquoi">
       <div class="sub-head"><span class="lvl">01-A</span><h3>Pourquoi le NEON VISOR</h3></div>
-      <div class="pillars four">
+      <div class="why-grid">
+        <figure class="gif-card"><img class="gifi " src="gifs/emg-neon-visor.gif" alt="Animation : le NEON VISOR en pixel art change de couleur" width="360" height="220" loading="lazy"></figure>
+      <div class="pillars four two-col">
         <div class="pillar"><canvas width="16" height="16" data-sprite="heart" class="spr"></canvas><div><h4 class="k-c">Confort</h4><p>Mousse respirante et lavable pour les longues sessions.</p></div></div>
         <div class="pillar"><canvas width="16" height="16" data-sprite="bolt" class="spr"></canvas><div><h4 class="k-p">Lumière</h4><p>Contour LED néon qui s'accorde à ton setup gaming.</p></div></div>
         <div class="pillar"><canvas width="16" height="16" data-sprite="star" class="spr"></canvas><div><h4 class="k-g">Style</h4><p>Un look arcade rétro, en 4 éditions de couleur.</p></div></div>
         <div class="pillar"><canvas width="16" height="16" data-sprite="key" class="spr"></canvas><div><h4 class="k-c">Durable</h4><p>Ton casque garde un look neuf plus longtemps : on remplace la mousse, pas le casque.</p></div></div>
+      </div>
       </div>
     </div>
 
@@ -732,7 +758,8 @@
           <p>10 places pour tester le prototype et donner ton avis.</p>
           <span class="next blink" aria-hidden="true">▼</span>
         </div>
-        <div class="reviews-empty">
+        <div class="reviews-empty with-gif">
+          <img class="gifi sticker" src="gifs/emg-etoile.gif" alt="" width="128" height="128" loading="lazy">
           <b>Avis clients : 0 pour l'instant</b>
           <span>Les premiers avis publiés ici viendront de nos testeurs, puis des acheteurs. Aucun avis inventé.</span>
         </div>
@@ -762,7 +789,7 @@
           <figure><img src="carte-verso.webp" alt="Verso : Player Card avec une ligne pour le nom du joueur et 10 cases à tamponner, la dixième est un cadeau" width="760" height="492"><figcaption class="k-p">Verso · Player Card</figcaption></figure>
         </div>
         <div class="loyal-txt">
-          <p class="phare-lead">Chaque achat fait avancer ta partie.</p>
+          <div class="coin-line"><img class="gifi coin-gif" src="gifs/emg-piece.gif" alt="Animation : une pièce dorée qui tourne, +1 point" width="160" height="160" loading="lazy"><p class="phare-lead">Chaque achat fait avancer ta partie.</p></div>
           <ol class="steps">
             <li><b>1 achat = 1 point</b><span>On tamponne une case de ta Player Card.</span></li>
             <li><b>Remplis les 10 cases</b><span>Ta barre d'XP monte à chaque passage.</span></li>
@@ -810,7 +837,7 @@
         <button class="btn" type="submit">► Valider mon inscription</button>
       </form>
       <div class="wdone" id="wdone" hidden tabindex="-1">
-        <div class="lvlup" aria-hidden="true"><canvas class="spr" data-sprite="chest"></canvas><span class="lv-t">LEVEL UP !</span><span class="lv-x">+500 XP</span><div class="burst"></div></div>
+        <img class="gifi lvl-gif" src="gifs/emg-level-up.gif" alt="LEVEL UP ! +500 XP, bienvenue dans la liste" width="420" height="170" loading="lazy">
         <div class="who k-c">Inscription prête ›</div>
         <p>Ta messagerie s'ouvre avec ton message pour <b>emg.gaming@gmail.com</b> : il ne reste qu'à l'envoyer.</p>
         <p class="small">Rien ne s'ouvre ? Copie le message et envoie-le toi-même.</p>
@@ -819,6 +846,7 @@
         <span class="copied" id="wcopied" role="status" aria-live="polite"></span>
       </div>
       <aside class="why">
+        <img class="gifi sticker" src="gifs/emg-manette.gif" alt="" width="128" height="128" loading="lazy">
         <div class="col-h k-p">Ce que tu y gagnes</div>
         <ul class="codes">
           <li>Être prévenu en premier du lancement</li>
@@ -997,6 +1025,16 @@
       </div>
       <p class="note">Les chiffres sont une simulation : ce sont nos objectifs à 6 mois, pas des résultats réels.</p>
     </details>
+  </section>
+
+  <!-- BANDEAU PRESS START -->
+  <section class="press-band" aria-label="Rejoindre la liste d'attente">
+    <a href="#liste" class="press-link"><img class="gifi " src="gifs/emg-press-start.gif" alt="EMG, Rétro par passion. Immersif par vision. Press start" width="480" height="270" loading="lazy"></a>
+    <div>
+      <p class="pb-t">Prêt à jouer ?</p>
+      <p class="pb-s">Inscris-toi à la liste d'attente et gagne ta place parmi les 10 testeurs du prototype.</p>
+      <div class="btns"><a class="btn" href="#liste">► Press start</a><img class="gifi sticker inline" src="gifs/emg-coeur.gif" alt="" width="128" height="128" loading="lazy"><img class="gifi sticker inline" src="gifs/emg-eclair.gif" alt="" width="128" height="128" loading="lazy"></div>
+    </div>
   </section>
 
   <!-- 09 CONTACT -->
@@ -1564,7 +1602,7 @@
 /* LEVEL UP : confettis pixel quand l'inscription est prête */
 (function(){
   const done = document.getElementById('wdone'); if (!done) return;
-  const burst = done.querySelector('.burst'); const cols = ['#00D4F0', '#FF1B8D', '#FFD21F', '#7B3CF0', '#F2F1FF'];
+  const burst = done.querySelector('.burst'); if (!burst) return; const cols = ['#00D4F0', '#FF1B8D', '#FFD21F', '#7B3CF0', '#F2F1FF'];
   new MutationObserver(() => {
     if (done.hidden || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     burst.innerHTML = '';
