@@ -553,6 +553,20 @@
   .burst i{position:absolute;width:6px;height:6px;left:40px;top:30px;animation:boom .9s steps(8) forwards}
   @keyframes boom{to{transform:translate(var(--dx),var(--dy));opacity:0}}
   @media (prefers-reduced-motion:reduce){.head-spr,.lv-t,.burst i,.plus{animation:none}}
+  .gif-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .gif-grid .gif.big{grid-column:span 2}
+  @media (max-width:900px){.gif-grid{grid-template-columns:1fr 1fr}.gif-grid .gif.big{grid-column:1/-1}}
+  .gif{margin:0;background:var(--panel);border:2px solid var(--line);display:flex;flex-direction:column}
+  .gif img{display:block;width:100%;height:auto;image-rendering:pixelated;background:#07070F;aspect-ratio:auto}
+  .gif figcaption{padding:12px 14px;display:grid;gap:4px}
+  .gif figcaption b{font:400 15px/1.3 var(--display)}
+  .gif figcaption span{font-size:13px;color:var(--muted)}
+  .gif .dl{margin-top:4px;color:var(--cyan);font-weight:600;font-size:14px;text-decoration:none}
+  .gif .dl::before{content:"↓ "}
+  .gif:hover{border-color:var(--cyan)}
+  .gif.small img{width:96px;margin:18px auto 4px;background:none}
+  .gif figcaption{font-style:normal}
+  .gif figcaption span{font-style:normal}
 </style>
 </head>
 <body>
@@ -564,7 +578,7 @@
       <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-0">Produit <span aria-hidden="true">▾</span></button>
         <div class="dd-menu" id="dd-0"><a href="#produit" class="dd-all">NEON VISOR</a><a href="#produit"><span>01</span>Vitrine 3D et fiche technique</a><a href="#compatibilite"><span>02</span>Compatibilité</a><a href="#tests"><span>03</span>Tests et avis</a><a href="#garanties"><span>04</span>Garanties et avantages</a></div></div>
       <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-1">EMG <span aria-hidden="true">▾</span></button>
-        <div class="dd-menu" id="dd-1"><a href="#a-propos" class="dd-all">L'équipe EMG</a><a href="#a-propos"><span>07</span>Qui sommes-nous</a><a href="#kit-media"><span>08</span>Kit média</a><a href="#contact"><span>09</span>Contact</a></div></div>
+        <div class="dd-menu" id="dd-1"><a href="#a-propos" class="dd-all">L'équipe EMG</a><a href="#a-propos"><span>07</span>Qui sommes-nous</a><a href="#kit-media"><span>08</span>Kit média</a><a href="#gifs"><span>08</span>GIF animés</a><a href="#contact"><span>09</span>Contact</a></div></div>
       <a href="#faq">FAQ</a>
       <a href="#liste" class="nav-cta">► Liste d'attente</a>
     </nav>
@@ -946,6 +960,21 @@
             <li>QR code pour rejoindre l'aventure</li>
           </ul>
         </div>
+      </div>
+    </div>
+    <div class="sub" id="gifs">
+      <div class="sub-head"><span class="lvl">08-C</span><h3>GIF animés EMG</h3></div>
+      <p class="sec-lead" style="margin:-6px 0 22px">Créés à partir de nos propres sprites : libres d’utilisation pour nos réseaux, les créateurs et les salons.</p>
+      <div class="gif-grid">
+        <figure class="gif big"><img src="gifs/emg-press-start.gif" alt="Logo EMG en couleurs néon avec « PRESS START » qui clignote" width="480" height="270" loading="lazy"><figcaption><b>Écran titre « Press Start »</b><span>Intro de vidéo, story, écran de salon</span><a class="dl" href="gifs/emg-press-start.gif" download>Télécharger le GIF</a></figcaption></figure>
+        <figure class="gif big"><img src="gifs/emg-joueur.gif" alt="Un petit joueur avec un casque VR court, saute et attrape des pièces, le score augmente" width="480" height="180" loading="lazy"><figcaption><b>Le joueur EMG</b><span>Bannière, post, en-tête de page</span><a class="dl" href="gifs/emg-joueur.gif" download>Télécharger le GIF</a></figcaption></figure>
+        <figure class="gif"><img src="gifs/emg-neon-visor.gif" alt="Le casque NEON VISOR en pixel art change de couleur : cyan, rose, jaune" width="360" height="220" loading="lazy"><figcaption><b>NEON VISOR</b><span>Annonce du produit, story</span><a class="dl" href="gifs/emg-neon-visor.gif" download>Télécharger le GIF</a></figcaption></figure>
+        <figure class="gif big"><img src="gifs/emg-level-up.gif" alt="Un coffre s’ouvre avec des confettis et le texte LEVEL UP ! +500 XP" width="420" height="170" loading="lazy"><figcaption><b>LEVEL UP !</b><span>Remerciement après inscription, réponse en message</span><a class="dl" href="gifs/emg-level-up.gif" download>Télécharger le GIF</a></figcaption></figure>
+        <figure class="gif"><img src="gifs/emg-piece.gif" alt="Une pièce dorée qui tourne, avec +1 POINT" width="160" height="160" loading="lazy"><figcaption><b>Pièce +1 point</b><span>Player Card, programme fidélité</span><a class="dl" href="gifs/emg-piece.gif" download>Télécharger le GIF</a></figcaption></figure>
+        <figure class="gif small"><img src="gifs/emg-coeur.gif" alt="Un cœur rose en pixel qui bat" width="128" height="128" loading="lazy"><figcaption><b>Cœur</b><span>Sticker, réaction</span><a class="dl" href="gifs/emg-coeur.gif" download>Télécharger le GIF</a></figcaption></figure>
+        <figure class="gif small"><img src="gifs/emg-etoile.gif" alt="Une étoile jaune qui scintille" width="128" height="128" loading="lazy"><figcaption><b>Étoile</b><span>Sticker, avis</span><a class="dl" href="gifs/emg-etoile.gif" download>Télécharger le GIF</a></figcaption></figure>
+        <figure class="gif small"><img src="gifs/emg-manette.gif" alt="Une manette violette dont les boutons clignotent" width="128" height="128" loading="lazy"><figcaption><b>Manette</b><span>Sticker, gaming</span><a class="dl" href="gifs/emg-manette.gif" download>Télécharger le GIF</a></figcaption></figure>
+        <figure class="gif small"><img src="gifs/emg-eclair.gif" alt="Un éclair jaune qui grésille" width="128" height="128" loading="lazy"><figcaption><b>Éclair</b><span>Sticker, nouveauté</span><a class="dl" href="gifs/emg-eclair.gif" download>Télécharger le GIF</a></figcaption></figure>
       </div>
     </div>
     <details class="more-box" id="reseaux">
@@ -1402,6 +1431,7 @@
     };
     api.setView = (y, x) => { vy = 0; const k = Math.round((rotY - y) / (Math.PI * 2)); goal = { y: y + k * Math.PI * 2, x }; if (reduce) { rotY = goal.y; rotX = x; goal = null; draw(0); } };
     api.setAuto = on => { goal = null; vy = on && !reduce ? .005 : 0; };
+    api.setRot = (y, x) => { goal = null; vy = 0; rotY = y; rotX = x; };
     reduce ? (draw(0), canvas.addEventListener('pointermove', () => draw(0))) : visibleLoop(canvas, draw);
     return api;
   }
