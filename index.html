@@ -606,7 +606,7 @@
       <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-0">Produit <span aria-hidden="true">▾</span></button>
         <div class="dd-menu" id="dd-0"><a href="#produit" class="dd-all">NEON VISOR</a><a href="#produit"><span>01</span>Vitrine 3D et fiche technique</a><a href="#compatibilite"><span>02</span>Compatibilité</a><a href="#tests"><span>03</span>Tests et avis</a><a href="#garanties"><span>04</span>Garanties et avantages</a></div></div>
       <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-1">EMG <span aria-hidden="true">▾</span></button>
-        <div class="dd-menu" id="dd-1"><a href="#a-propos" class="dd-all">L'équipe EMG</a><a href="#a-propos"><span>07</span>Qui sommes-nous</a><a href="#kit-media"><span>08</span>Kit média</a><a href="#gifs"><span>08</span>GIF animés</a><a href="#contact"><span>09</span>Contact</a></div></div>
+        <div class="dd-menu" id="dd-1"><a href="#a-propos" class="dd-all">L'équipe EMG</a><a href="#a-propos"><span>07</span>Qui sommes-nous</a><a href="#kit-media"><span>08</span>Kit média</a><a href="#contact"><span>09</span>Contact</a></div></div>
       <a href="#faq">FAQ</a>
       <a href="#liste" class="nav-cta">► Liste d'attente</a>
     </nav>
@@ -988,21 +988,6 @@
             <li>QR code pour rejoindre l'aventure</li>
           </ul>
         </div>
-      </div>
-    </div>
-    <div class="sub" id="gifs">
-      <div class="sub-head"><span class="lvl">08-C</span><h3>GIF animés EMG</h3></div>
-      <p class="sec-lead" style="margin:-6px 0 22px">Créés à partir de nos propres sprites : libres d’utilisation pour nos réseaux, les créateurs et les salons.</p>
-      <div class="gif-grid">
-        <figure class="gif big"><img src="gifs/emg-press-start.gif" alt="Logo EMG en couleurs néon avec « PRESS START » qui clignote" width="480" height="270" loading="lazy"><figcaption><b>Écran titre « Press Start »</b><span>Intro de vidéo, story, écran de salon</span><a class="dl" href="gifs/emg-press-start.gif" download>Télécharger le GIF</a></figcaption></figure>
-        <figure class="gif big"><img src="gifs/emg-joueur.gif" alt="Un petit joueur avec un casque VR court, saute et attrape des pièces, le score augmente" width="480" height="180" loading="lazy"><figcaption><b>Le joueur EMG</b><span>Bannière, post, en-tête de page</span><a class="dl" href="gifs/emg-joueur.gif" download>Télécharger le GIF</a></figcaption></figure>
-        <figure class="gif"><img src="gifs/emg-neon-visor.gif" alt="Le casque NEON VISOR en pixel art change de couleur : cyan, rose, jaune" width="360" height="220" loading="lazy"><figcaption><b>NEON VISOR</b><span>Annonce du produit, story</span><a class="dl" href="gifs/emg-neon-visor.gif" download>Télécharger le GIF</a></figcaption></figure>
-        <figure class="gif big"><img src="gifs/emg-level-up.gif" alt="Un coffre s’ouvre avec des confettis et le texte LEVEL UP ! +500 XP" width="420" height="170" loading="lazy"><figcaption><b>LEVEL UP !</b><span>Remerciement après inscription, réponse en message</span><a class="dl" href="gifs/emg-level-up.gif" download>Télécharger le GIF</a></figcaption></figure>
-        <figure class="gif"><img src="gifs/emg-piece.gif" alt="Une pièce dorée qui tourne, avec +1 POINT" width="160" height="160" loading="lazy"><figcaption><b>Pièce +1 point</b><span>Player Card, programme fidélité</span><a class="dl" href="gifs/emg-piece.gif" download>Télécharger le GIF</a></figcaption></figure>
-        <figure class="gif small"><img src="gifs/emg-coeur.gif" alt="Un cœur rose en pixel qui bat" width="128" height="128" loading="lazy"><figcaption><b>Cœur</b><span>Sticker, réaction</span><a class="dl" href="gifs/emg-coeur.gif" download>Télécharger le GIF</a></figcaption></figure>
-        <figure class="gif small"><img src="gifs/emg-etoile.gif" alt="Une étoile jaune qui scintille" width="128" height="128" loading="lazy"><figcaption><b>Étoile</b><span>Sticker, avis</span><a class="dl" href="gifs/emg-etoile.gif" download>Télécharger le GIF</a></figcaption></figure>
-        <figure class="gif small"><img src="gifs/emg-manette.gif" alt="Une manette violette dont les boutons clignotent" width="128" height="128" loading="lazy"><figcaption><b>Manette</b><span>Sticker, gaming</span><a class="dl" href="gifs/emg-manette.gif" download>Télécharger le GIF</a></figcaption></figure>
-        <figure class="gif small"><img src="gifs/emg-eclair.gif" alt="Un éclair jaune qui grésille" width="128" height="128" loading="lazy"><figcaption><b>Éclair</b><span>Sticker, nouveauté</span><a class="dl" href="gifs/emg-eclair.gif" download>Télécharger le GIF</a></figcaption></figure>
       </div>
     </div>
     <details class="more-box" id="reseaux">
@@ -1610,22 +1595,6 @@
       b.style.background = cols[i % cols.length]; b.style.setProperty('--dx', Math.round(Math.cos(a) * r / 4) * 4 + 'px'); b.style.setProperty('--dy', Math.round(Math.sin(a) * r / 4) * 4 + 'px'); burst.appendChild(b); }
     done.querySelectorAll('canvas[data-sprite]').forEach(c => window.EMGsprite && window.EMGsprite(c));
   }).observe(done, { attributes: true, attributeFilter: ['hidden'] });
-})();
-</script>
-<script>
-/* Téléchargement des GIF : lien normal sur le site hébergé, capacité "downloads" dans la vitrine claude.ai */
-(function(){
-  const links = document.querySelectorAll('a.dl'); if (!links.length) return;
-  let dl = null;
-  if (window.claude && claude.use) claude.use('downloads').then(n => { dl = n; }).catch(() => {});
-  links.forEach(a => a.addEventListener('click', async e => {
-    if (!dl) return;               // site hébergé : le lien "download" classique fait le travail
-    e.preventDefault();
-    try {
-      const blob = await (await fetch(a.getAttribute('href'))).blob();
-      await dl.save({ filename: a.getAttribute('href').split('/').pop(), data: blob });
-    } catch (err) { /* refus ou indisponible : rien à faire */ }
-  }));
 })();
 </script>
 
