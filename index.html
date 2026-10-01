@@ -595,55 +595,221 @@
   .press-band .btns{align-items:center}
   .sticker.inline{width:44px;height:44px}
   @media (prefers-reduced-motion:reduce){.gifi{animation:none}}
+  /* ---------- PAGE D'ACCUEIL (maquette) ---------- */
+  .bleed{margin-inline:calc(50% - 50vw);padding-inline:max(var(--gutter), calc(50vw - 600px))}
+  .home-nav .hud-in{flex-wrap:nowrap}
+  .home-nav .mainnav{flex:1;justify-content:center;gap:4px;flex-wrap:wrap}
+  .home-nav nav a{font:600 13px/1.1 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--text);display:flex;flex-direction:column;align-items:center;padding:10px 12px}
+  .home-nav nav a small{font:600 10px/1 var(--body);color:var(--pink);letter-spacing:.04em;margin-top:3px}
+  .home-nav nav a:hover{color:var(--cyan);border-color:transparent}
+  .nav-contact{font:600 13px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--text);text-decoration:none;padding:11px 16px;border:2px solid var(--pink);border-radius:6px;box-shadow:0 0 14px rgba(255,27,141,.35);white-space:nowrap}
+  .nav-contact:hover{background:rgba(255,27,141,.15)}
+  @media (max-width:860px){.home-nav .hud-in{flex-wrap:wrap}.home-nav .mainnav{order:3;flex-basis:100%;justify-content:flex-start}.home-nav nav a{font-size:12px;padding:8px}}
+  .hero2{background:radial-gradient(80% 90% at 75% 40%,#3a1680 0%,#1a0f4a 45%,#0b0826 100%);border-bottom:2px solid #2A1B6E;position:relative;overflow:hidden}
+  .hero2::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px);pointer-events:none}
+  .hero2-in{display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:center;padding-block:48px 40px}
+  @media (max-width:900px){.hero2-in{grid-template-columns:1fr}}
+  .hero2-txt{text-align:center;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1}
+  .hero-pad{width:96px;height:96px;margin-bottom:-6px}
+  .hero-logo{font:400 clamp(90px,11vw,150px)/1 var(--display);margin:0;letter-spacing:.04em;text-shadow:6px 6px 0 var(--deep),0 0 30px rgba(123,60,240,.45)}
+  .hero-logo span{display:inline-block}
+  .hero-slogan{font:400 clamp(24px,2.8vw,36px)/1.15 var(--display);text-transform:uppercase;letter-spacing:.06em;margin:14px 0 14px;text-shadow:3px 3px 0 var(--deep)}
+  .hero-lead{color:var(--muted);max-width:42ch;margin:0 0 26px;font-size:17px}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .obtn{font:600 14px/1 var(--body);text-transform:uppercase;letter-spacing:.06em;color:var(--text);text-decoration:none;padding:15px 22px;border:2px solid;border-radius:6px;background:rgba(7,7,15,.4);display:inline-flex;gap:10px;align-items:center;transition:background .15s,box-shadow .15s}
+  .obtn.pink{border-color:var(--pink);box-shadow:0 0 14px rgba(255,27,141,.3)}
+  .obtn.cyan{border-color:var(--cyan);box-shadow:0 0 14px rgba(0,212,240,.3)}
+  .obtn.pink:hover{background:rgba(255,27,141,.18)}.obtn.cyan:hover{background:rgba(0,212,240,.15)}
+  .obtn.sm{padding:11px 16px;font-size:12px}
+  .scroll-hint{margin-top:30px;font:400 10px/1.6 var(--pixel);text-transform:uppercase;color:var(--muted);text-decoration:none;display:flex;flex-direction:column;align-items:center}
+  .hero2-art{position:relative}
+  .room{display:block;width:100%;height:auto;border-radius:10px;box-shadow:0 0 60px rgba(255,27,141,.25)}
+  .light{background:linear-gradient(180deg,#F1EEFA 0%,#E9E4F7 100%);color:#1C1640;padding-block:56px 48px;position:relative}
+  .light::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 92% 8%,rgba(123,60,240,.12) 0 60px,transparent 61px),radial-gradient(circle at 4% 40%,rgba(123,60,240,.10) 0 50px,transparent 51px)}
+  .welcome{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:center;position:relative}
+  @media (max-width:900px){.welcome{grid-template-columns:1fr}}
+  .welcome-art svg{display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 18px 40px rgba(28,22,64,.25)}
+  .kicker{font:600 13px/1 var(--body);text-transform:uppercase;letter-spacing:.14em;color:var(--violet);margin:0 0 14px}
+  .welcome-txt h2{font:400 clamp(32px,3.6vw,46px)/1.12 var(--display);text-transform:uppercase;letter-spacing:.05em;margin:0 0 18px;color:#1C1640}
+  .welcome-txt h2 span{color:#2F7FE0}
+  .welcome-txt p{color:#3B3560;margin:0 0 10px;max-width:56ch}
+  .lbtn{display:inline-flex;gap:10px;margin-top:14px;font:600 13px/1 var(--body);text-transform:uppercase;letter-spacing:.06em;color:#1C1640;text-decoration:none;padding:13px 18px;border:2px solid var(--violet);border-radius:6px;background:#fff}
+  .lbtn:hover{background:#F1EAFF}
+  .pixel-title{font:400 clamp(18px,2vw,22px)/1.4 var(--pixel);text-transform:uppercase;text-align:center;color:#1C1640;margin:56px 0 22px;letter-spacing:.06em}
+  .pixel-title span{color:var(--pink);font-family:var(--body);font-size:14px}
+  .universe{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;background:radial-gradient(60% 120% at 50% 50%,#3a1680 0%,#160d3e 60%,#0b0826 100%);border-radius:14px;padding:30px;color:var(--text);box-shadow:0 18px 40px rgba(28,22,64,.3)}
+  @media (max-width:860px){.universe{grid-template-columns:1fr}.uni-core{order:-1}}
+  .uni-head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+  .uni-head .spr{width:52px;height:52px}
+  .uni-head h3{font:400 24px/1.1 var(--display);text-transform:uppercase;margin:0}
+  .uni-side p{color:#C9C6E8;font-size:15px;margin:0 0 18px;max-width:34ch}
+  .uni-side.right{justify-self:end}
+  .ring{width:190px;height:190px;border-radius:50%;display:grid;place-items:center;grid-auto-flow:column;font:400 54px/1 var(--display);border:3px solid var(--pink);box-shadow:0 0 30px rgba(255,27,141,.6),inset 0 0 30px rgba(0,212,240,.35),0 0 0 10px rgba(123,60,240,.15);background:radial-gradient(circle,#1b0f4a,#07070F);margin:auto}
+  .ring span{text-shadow:3px 3px 0 var(--deep)}
+  .creations{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  @media (max-width:900px){.creations{grid-template-columns:1fr 1fr}}
+  @media (max-width:480px){.creations{grid-template-columns:1fr}}
+  .cre{border-radius:12px;padding:22px 18px;text-align:center;border:1.5px solid}
+  .cre svg{width:52px;height:52px;margin:0 auto 10px;display:block}
+  .cre h3{font:600 14px/1.2 var(--body);text-transform:uppercase;letter-spacing:.08em;margin:0 0 8px}
+  .cre p{font-size:14px;color:#4A4470;margin:0}
+  .cre.pink{background:#FCEAF3;border-color:#F6C2DC}.cre.pink h3{color:#E0157E}
+  .cre.blue{background:#E9F1FD;border-color:#C2D8F6}.cre.blue h3{color:#2F7FE0}
+  .cre.gold{background:#FDF5E2;border-color:#F3DFAA}.cre.gold h3{color:#C98A00}
+  .cre.violet{background:#F1EAFD;border-color:#D8C6F6}.cre.violet h3{color:#7B3CF0}
+  .cta-band{margin-top:40px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;background:radial-gradient(80% 140% at 40% 50%,#2a1670 0%,#130c3a 70%);border-radius:14px;padding:22px 28px;color:var(--text);box-shadow:0 14px 34px rgba(28,22,64,.3)}
+  @media (max-width:760px){.cta-band{grid-template-columns:1fr;text-align:center;justify-items:center}}
+  .cta-band .spr{width:72px;height:72px}
+  .cta-t{font:400 clamp(20px,2.4vw,28px)/1.2 var(--display);text-transform:uppercase;letter-spacing:.04em;margin:0 0 6px}
+  .cta-t span{color:var(--cyan)}
+  .cta-s{margin:0;color:#C9C6E8;font-size:15px}
+  #bienvenue{scroll-margin-top:70px}
 </style>
 </head>
 <body>
-<div class="topbar" role="note"><span class="tb-tag">Concept en test</span> Le NEON VISOR n'est pas encore en vente. <a href="#liste">Rejoins la liste d'attente ›</a></div>
-<header class="hud">
+<header class="hud home-nav">
   <div class="wrap hud-in">
     <a class="brand" href="#start" aria-label="EMG, retour à l'accueil"><span class="c">E</span><span class="w">M</span><span class="p">G</span></a>
     <nav aria-label="Navigation principale" class="mainnav">
-      <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-0">Produit <span aria-hidden="true">▾</span></button>
-        <div class="dd-menu" id="dd-0"><a href="#produit" class="dd-all">NEON VISOR</a><a href="#produit"><span>01</span>Vitrine 3D et fiche technique</a><a href="#compatibilite"><span>02</span>Compatibilité</a><a href="#tests"><span>03</span>Tests et avis</a><a href="#garanties"><span>04</span>Garanties et avantages</a></div></div>
-      <div class="dd"><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-1">EMG <span aria-hidden="true">▾</span></button>
-        <div class="dd-menu" id="dd-1"><a href="#a-propos" class="dd-all">L'équipe EMG</a><a href="#a-propos"><span>07</span>Qui sommes-nous</a><a href="#kit-media"><span>08</span>Kit média</a><a href="#contact"><span>09</span>Contact</a></div></div>
-      <a href="#faq">FAQ</a>
-      <a href="#liste" class="nav-cta">► Liste d'attente</a>
+      <a href="#bienvenue">Entreprise</a>
+      <a href="#produit">Produits</a>
+      <a href="#garanties" class="nav-shop">Boutique<small>bientôt</small></a>
+      <a href="#a-propos">Qui sommes-nous ?</a>
+      <a href="#liste">Formulaire</a>
     </nav>
-    <div class="xp" aria-hidden="true">XP <span class="xp-bar" id="xp"></span></div>
+    <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">✉</span></a>
   </div>
 </header>
 
 <main class="wrap" id="start">
   <!-- ACCUEIL -->
-  <section class="title">
-    <canvas id="bg3d" aria-hidden="true"></canvas>
-    <div>
-      <div class="pill">Nouveau · Kit pour casque VR</div>
-      <h1>Ton casque VR, <em>plus confortable et plus lumineux.</em></h1>
-      <p class="lead">NEON VISOR, le kit néon d'EMG : 2 mousses lavables, un contour LED et une sangle rembourrée pour tes longues sessions.</p>
-      <ul class="hero-facts">
-        <li><b>Meta Quest 3 / 3S</b><span>compatibilité en test</span></li>
-        <li><b>49,90 €</b><span>prix indicatif</span></li>
-        <li><b>4 éditions</b><span>de couleur</span></li>
-      </ul>
-      <div class="btns">
-        <a class="btn" href="#liste" id="startBtn">► Rejoindre la liste d'attente</a>
-        <a class="btn alt" href="#produit">Voir en 3D</a>
+  <section class="hero2 bleed">
+    <div class="hero2-in">
+      <div class="hero2-txt">
+        <canvas class="spr hero-pad" data-sprite="pad" aria-hidden="true"></canvas>
+        <h1 class="hero-logo" aria-label="EMG"><span class="c">E</span><span class="w">M</span><span class="p">G</span></h1>
+        <p class="hero-slogan">Rétro par <span class="p">passion.</span><br>Immersif par <span class="c">vision.</span></p>
+        <p class="hero-lead">EMG réinvente l'expérience gaming en mêlant l'univers rétro aux technologies et aux expériences immersives d'aujourd'hui.</p>
+        <div class="hero-btns">
+          <a class="obtn pink" href="#bienvenue" id="startBtn"><span aria-hidden="true">▷</span> Découvrir EMG</a>
+          <a class="obtn cyan" href="#produit"><span aria-hidden="true">🎮</span> Voir nos produits</a>
+        </div>
+        <a class="scroll-hint" href="#bienvenue">Scroll pour découvrir <span aria-hidden="true">⌄</span></a>
       </div>
-      <p class="slogan">Rétro par passion. Immersif par vision.</p>
-      <div class="hero-gif"><img class="gifi " src="gifs/emg-joueur.gif" alt="Animation : le joueur EMG court et attrape des pièces" width="480" height="180" loading="lazy"></div>
-    </div>
-    <div class="screen hero-shot">
-      <img src="visor-real.webp" alt="NEON VISOR en rendu réaliste : casque VR à coque violette, visière noire vernie, bande lumineuse cyan et contour LED rose, sur un podium néon" width="1060" height="710">
+      <div class="hero2-art"><svg class="room" viewBox="0 0 640 440" role="img" aria-label="Illustration : une chambre de joueur aux lumières néon, avec une fenêtre sur la ville la nuit, un écran, une chaise gaming et une enseigne GAME ON">
+<defs>
+<linearGradient id="rsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A0F5C"/><stop offset=".6" stop-color="#7B3CF0"/><stop offset="1" stop-color="#FF1B8D"/></linearGradient>
+<linearGradient id="rwall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1B1150"/><stop offset="1" stop-color="#0B0826"/></linearGradient>
+<linearGradient id="rsun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD21F"/><stop offset="1" stop-color="#FF1B8D"/></linearGradient>
+<radialGradient id="rglow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FF1B8D" stop-opacity=".55"/><stop offset="1" stop-color="#FF1B8D" stop-opacity="0"/></radialGradient>
+<filter id="rneon" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="640" height="440" fill="url(#rwall)"/>
+<path d="M0 20 L640 0" stroke="#FF1B8D" stroke-width="4" filter="url(#rneon)" opacity=".9"/>
+<path d="M0 24 Q320 70 640 6 L640 0 L0 0Z" fill="#FF1B8D" opacity=".12"/>
+<g transform="translate(40 60)">
+<rect width="230" height="250" rx="4" fill="url(#rsky)"/>
+<g fill="#160A3D">
+<rect x="8" y="140" width="26" height="110"/><rect x="38" y="105" width="22" height="145"/><rect x="64" y="160" width="30" height="90"/><rect x="98" y="80" width="26" height="170"/><rect x="128" y="130" width="22" height="120"/><rect x="154" y="100" width="30" height="150"/><rect x="188" y="150" width="34" height="100"/>
+</g>
+<g fill="#FFD21F" opacity=".75"><rect x="44" y="120" width="4" height="4"/><rect x="52" y="140" width="4" height="4"/><rect x="104" y="100" width="4" height="4"/><rect x="112" y="130" width="4" height="4"/><rect x="160" y="120" width="4" height="4"/><rect x="170" y="160" width="4" height="4"/><rect x="14" y="170" width="4" height="4"/></g>
+<rect width="230" height="250" rx="4" fill="none" stroke="#3D1A9E" stroke-width="8"/>
+<path d="M115 0 V250 M0 125 H230" stroke="#3D1A9E" stroke-width="6"/>
+</g>
+<g filter="url(#rneon)"><rect x="440" y="70" width="140" height="84" rx="10" fill="none" stroke="#FF1B8D" stroke-width="4"/>
+<text x="510" y="106" text-anchor="middle" font-family="Russo One, Arial Black, sans-serif" font-size="28" fill="#FF8AC4">GAME</text>
+<text x="510" y="140" text-anchor="middle" font-family="Russo One, Arial Black, sans-serif" font-size="28" fill="#FF8AC4">ON</text></g>
+<g opacity=".8"><rect x="300" y="80" width="90" height="6" fill="#2A1B6E"/><rect x="300" y="130" width="90" height="6" fill="#2A1B6E"/><rect x="310" y="60" width="14" height="20" fill="#00D4F0" opacity=".7"/><rect x="330" y="64" width="10" height="16" fill="#FF1B8D" opacity=".7"/><rect x="350" y="110" width="22" height="20" fill="#7B3CF0"/></g>
+<ellipse cx="420" cy="300" rx="200" ry="60" fill="url(#rglow)"/>
+<rect x="250" y="320" width="300" height="10" rx="3" fill="#2A1B6E"/>
+<rect x="268" y="330" width="8" height="70" fill="#1B1150"/><rect x="524" y="330" width="8" height="70" fill="#1B1150"/>
+<g transform="translate(330 220)"><rect width="150" height="92" rx="6" fill="#0B0826" stroke="#00D4F0" stroke-width="3" filter="url(#rneon)"/>
+<rect x="8" y="8" width="134" height="76" fill="#2A0F5C"/><circle cx="75" cy="56" r="22" fill="url(#rsun)"/>
+<g stroke="#2A0F5C" stroke-width="3"><path d="M50 50 H100 M50 58 H100 M52 66 H98"/></g>
+<path d="M8 72 L142 72 M20 84 L75 72 L130 84" stroke="#00D4F0" stroke-width="1.5" opacity=".8"/>
+<rect x="68" y="92" width="14" height="10" fill="#1B1150"/></g>
+<rect x="350" y="316" width="70" height="6" rx="2" fill="#7B3CF0"/>
+<g transform="translate(275 268)"><rect width="22" height="50" rx="4" fill="#160A3D" stroke="#7B3CF0" stroke-width="2"/><circle cx="11" cy="16" r="5" fill="#FF1B8D"/></g>
+<g transform="translate(540 230)" fill="#160A3D" stroke="#7B3CF0" stroke-width="2"><rect x="0" y="0" width="70" height="110" rx="20"/><rect x="-6" y="100" width="82" height="22" rx="8"/><rect x="31" y="122" width="8" height="40"/><path d="M5 170 H65" stroke-width="5"/></g>
+<g transform="translate(200 300)" fill="#0E3B2E"><path d="M30 120 C10 70 0 40 20 0 C30 40 35 70 30 120Z"/><path d="M34 120 C50 60 70 40 80 20 C78 60 60 90 34 120Z"/><path d="M28 120 C0 90 -20 70 -30 50 C0 60 20 90 28 120Z"/><rect x="14" y="110" width="32" height="30" rx="4" fill="#3D1A9E"/></g>
+<rect x="0" y="400" width="640" height="40" fill="#0B0826"/>
+<ellipse cx="430" cy="410" rx="160" ry="10" fill="#FF1B8D" opacity=".25"/>
+</svg></div>
     </div>
   </section>
-  <ul class="perks trust" aria-label="L'essentiel en un coup d'œil">
-    <li><canvas width="16" height="16" data-sprite="vr" class="spr"></canvas><div><b>Meta Quest 3 / 3S</b><span>Compatibilité en test</span></div></li>
-    <li><canvas width="16" height="16" data-sprite="heart" class="spr"></canvas><div><b>Mousse remplaçable</b><span>Lavable, on change la mousse, pas le kit</span></div></li>
-    <li><canvas width="16" height="16" data-sprite="key" class="spr"></canvas><div><b>Garantie légale 2 ans</b><span>À l'ouverture des ventes</span></div></li>
-    <li><canvas width="16" height="16" data-sprite="bolt" class="spr"></canvas><div><b>Réponse sous 48 h</b><span>Une question ? On répond vite</span></div></li>
-  </ul>
+
+  <!-- BIENVENUE + UNIVERS + CREATIONS (zone claire) -->
+  <section class="light bleed" id="bienvenue">
+    <div class="welcome">
+      <div class="welcome-art"><svg viewBox="0 0 520 400" role="img" aria-label="Illustration : une salle d'arcade rétro avec une rangée de bornes lumineuses et une borne EMG au premier plan">
+<defs><linearGradient id="abg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B1150"/><stop offset="1" stop-color="#07070F"/></linearGradient>
+<linearGradient id="afl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A0F5C"/><stop offset="1" stop-color="#07070F"/></linearGradient>
+<filter id="aneon" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="520" height="400" fill="url(#abg)"/>
+<path d="M0 30 H520" stroke="#FF1B8D" stroke-width="3" filter="url(#aneon)" opacity=".8"/>
+<rect y="300" width="520" height="100" fill="url(#afl)"/>
+<g opacity=".9">
+<g transform="translate(260 120)"><rect width="50" height="170" rx="4" fill="#160A3D" stroke="#7B3CF0"/><rect x="8" y="20" width="34" height="34" fill="#00D4F0" opacity=".6"/></g>
+<g transform="translate(320 110)"><rect width="56" height="185" rx="4" fill="#160A3D" stroke="#FF1B8D"/><rect x="8" y="22" width="40" height="38" fill="#FF1B8D" opacity=".55"/></g>
+<g transform="translate(386 98)"><rect width="62" height="200" rx="4" fill="#160A3D" stroke="#FFD21F"/><rect x="9" y="24" width="44" height="42" fill="#FFD21F" opacity=".5"/></g>
+<g transform="translate(458 84)"><rect width="70" height="218" rx="4" fill="#160A3D" stroke="#00D4F0"/><rect x="10" y="26" width="50" height="46" fill="#00D4F0" opacity=".5"/></g>
+</g>
+<g transform="translate(60 60)">
+<path d="M0 30 L150 0 L170 0 L170 320 L0 320Z" fill="#1B1150" stroke="#FF1B8D" stroke-width="3" filter="url(#aneon)"/>
+<rect x="20" y="40" width="130" height="34" rx="4" fill="#07070F"/>
+<text x="85" y="66" text-anchor="middle" font-family="Russo One, Arial Black, sans-serif" font-size="26"><tspan fill="#00D4F0">E</tspan><tspan fill="#F2F1FF">M</tspan><tspan fill="#FF1B8D">G</tspan></text>
+<rect x="20" y="90" width="130" height="100" rx="6" fill="#0B0826" stroke="#00D4F0" stroke-width="3"/>
+<text x="85" y="135" text-anchor="middle" font-family="Courier New, monospace" font-size="14" font-weight="700" fill="#00D4F0">PRESS</text>
+<text x="85" y="155" text-anchor="middle" font-family="Courier New, monospace" font-size="14" font-weight="700" fill="#00D4F0">START</text>
+<path d="M10 200 H160 L150 240 H20Z" fill="#2A1B6E"/>
+<circle cx="55" cy="218" r="8" fill="#FF1B8D"/><rect x="51" y="206" width="8" height="14" fill="#F2F1FF"/>
+<circle cx="100" cy="220" r="7" fill="#00D4F0"/><circle cx="122" cy="214" r="7" fill="#FFD21F"/>
+<circle cx="85" cy="290" r="14" fill="none" stroke="#FF1B8D" stroke-width="3"/>
+</g>
+<g fill="#FF1B8D" opacity=".18"><rect x="40" y="380" width="200" height="6"/><rect x="300" y="384" width="180" height="4"/></g>
+</svg></div>
+      <div class="welcome-txt">
+        <p class="kicker">Bienvenue chez EMG —</p>
+        <h2>Plus qu'un jeu.<br>Une <span>expérience.</span></h2>
+        <p>Chez EMG, nous imaginons de nouvelles façons de jouer, de découvrir et de vivre le gaming.</p>
+        <p>Inspirés par l'univers rétro qui a marqué l'histoire du jeu vidéo, nous associons les technologies et les usages d'aujourd'hui pour créer des expériences uniques.</p>
+        <p>Notre ambition : faire évoluer le gaming sans oublier ce qui nous a donné envie de jouer.</p>
+        <a class="lbtn" href="#a-propos">Découvrir notre histoire <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <h2 class="pixel-title"><span aria-hidden="true">✦ ✧</span> Notre univers <span aria-hidden="true">✧ ✦</span></h2>
+    <div class="universe">
+      <div class="uni-side">
+        <div class="uni-head"><canvas class="spr" data-sprite="heart" aria-hidden="true"></canvas><h3 class="p">Rétro<br>par passion.</h3></div>
+        <p>L'héritage des jeux légendaires, des consoles mythiques et d'une culture qui nous inspire depuis toujours.</p>
+        <a class="obtn pink sm" href="#a-propos">En savoir plus</a>
+      </div>
+      <div class="uni-core" aria-hidden="true"><div class="ring"><span class="c">E</span><span class="w">M</span><span class="p">G</span></div></div>
+      <div class="uni-side right">
+        <div class="uni-head"><canvas class="spr" data-sprite="vr" aria-hidden="true"></canvas><h3 class="c">Immersif<br>par vision.</h3></div>
+        <p>Les technologies d'aujourd'hui au service d'expériences toujours plus immersives, interactives et innovantes.</p>
+        <a class="obtn cyan sm" href="#produit">En savoir plus</a>
+      </div>
+    </div>
+
+    <h2 class="pixel-title"><span aria-hidden="true">✦ ✧</span> Ce que nous créons <span aria-hidden="true">✧ ✦</span></h2>
+    <div class="creations">
+      <article class="cre pink"><svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="#FF1B8D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="18" width="52" height="28" rx="14"/><path d="M18 26v12M12 32h12"/><circle cx="44" cy="28" r="2.5"/><circle cx="50" cy="34" r="2.5"/></svg><h3>Accessoires gaming</h3><p>Des accessoires pensés pour améliorer l'expérience et valoriser les performances.</p></article>
+      <article class="cre blue"><svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="#2F7FE0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="20" width="52" height="24" rx="8"/><path d="M26 44l6-8 6 8"/><circle cx="20" cy="32" r="5"/><circle cx="44" cy="32" r="5"/></svg><h3>Immersion</h3><p>Des solutions pour rapprocher le joueur de son univers et vivre le jeu autrement.</p></article>
+      <article class="cre gold"><svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="#E8A500" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 40c-6-4-9-10-9-16a19 19 0 0 1 38 0c0 6-3 12-9 16v6H22z"/><path d="M24 52h16M32 6V2M10 12 7 9M54 12l3-3"/></svg><h3>Innovation</h3><p>Nous explorons les nouvelles idées et technologies pour imaginer le gaming de demain.</p></article>
+      <article class="cre violet"><svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="#7B3CF0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h28v14a14 14 0 0 1-28 0z"/><path d="M18 12H8c0 8 4 12 10 12M46 12h10c0 8-4 12-10 12M32 36v10M22 54h20M26 46h12v8H26z"/></svg><h3>Culture gaming</h3><p>Un univers inspiré par l'histoire du jeu vidéo et la passion qui nous rassemble.</p></article>
+    </div>
+
+    <div class="cta-band">
+      <canvas class="spr" data-sprite="pad" aria-hidden="true"></canvas>
+      <div>
+        <p class="cta-t">Prêt à entrer dans<br>une <span>autre dimension</span> ?</p>
+        <p class="cta-s">Rejoignez l'aventure EMG et préparez-vous à vivre le jeu autrement.</p>
+      </div>
+      <a class="obtn pink" href="#contact">Nous contacter <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
 
   <!-- 01 PRODUIT -->
   <section class="world vitrine" id="produit" aria-labelledby="h-produit">
@@ -1036,7 +1202,7 @@
 <footer class="wrap">
   <div class="foot-row">
     <div><span class="brand" style="font-size:20px"><span class="c">E</span><span class="w">M</span><span class="p">G</span></span></div>
-    <nav class="foot-links" aria-label="Liens de bas de page"><a href="#produit">Produit</a><a href="#faq">FAQ</a><a href="#liste">Liste d'attente</a><a href="#contact">Contact</a></nav>
+    <nav class="foot-links" aria-label="Liens de bas de page"><a href="#bienvenue">Entreprise</a><a href="#produit">Produits</a><a href="#garanties">Boutique</a><a href="#a-propos">Qui sommes-nous ?</a><a href="#liste">Formulaire</a><a href="#contact">Contact</a></nav>
     <div class="socials foot"><div class="socials foot"><a class="sbtn ig" href="https://www.instagram.com/emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg><span>Instagram</span></a><a class="sbtn tt" href="https://www.tiktok.com/@emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path></svg><span>TikTok</span></a><a class="sbtn fb" href="https://www.facebook.com/emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg><span>Facebook</span></a><a class="sbtn li" href="https://www.linkedin.com/company/emg-gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg><span>LinkedIn</span></a></div>
     
     <div class="pixel">Rétro par passion. Immersif par vision. © 2026 EMG</div>
@@ -1066,7 +1232,7 @@
 <script>
 (function(){
   // XP bar follows scroll
-  const xp=document.getElementById('xp');const N=12;
+  const xp=document.getElementById('xp')||document.createElement('div');const N=12;
   for(let i=0;i<N;i++)xp.appendChild(document.createElement('i'));
   const cells=[...xp.children];
   function onScroll(){
