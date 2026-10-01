@@ -664,7 +664,52 @@
   .cta-t span{color:var(--cyan)}
   .cta-s{margin:0;color:#C9C6E8;font-size:15px}
   #bienvenue{scroll-margin-top:70px}
+  /* ---------- Accueil : finitions maquette ---------- */
+  .home-nav{background:#0b0826}
+  .hero2{background:#120b38;min-height:620px}
+  .hero2-in{grid-template-columns:1fr 1fr;padding-block:40px 30px;min-height:600px}
+  .hero2-art{position:absolute;right:0;top:0;bottom:0;width:58%;z-index:0}
+  .hero2-art .room{width:100%;height:100%;object-fit:cover;border-radius:0;box-shadow:none}
+  .hero2-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#120b38 0%,rgba(18,11,56,.6) 18%,transparent 45%)}
+  .hero2-txt{grid-column:1}
+  @media (max-width:900px){.hero2-in{grid-template-columns:1fr;min-height:0}.hero2-art{position:relative;width:auto;height:260px;margin-inline:calc(var(--gutter)*-1);order:2}.hero2-art::after{background:linear-gradient(180deg,#120b38 0%,transparent 35%)}.hero-logo{font-size:clamp(72px,22vw,120px);white-space:nowrap}.hero2-txt .deco.d-heart{left:0!important;top:auto!important;bottom:62%!important}.hero2-txt .deco.d-star{display:none}}
+  .hero-logo .c{background:linear-gradient(180deg,#5FE8FF,#2F7FE0);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(5px 5px 0 #3D1A9E)}
+  .hero-logo .p{background:linear-gradient(180deg,#FF6FB5,#E0157E);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(5px 5px 0 #3D1A9E)}
+  .hero-logo .w{color:#F2F1FF}
+  .hero2-txt .deco{position:absolute;image-rendering:pixelated}
+  .d-heart{width:40px;height:40px;left:4%;top:44%}
+  .d-star{width:34px;height:34px;right:6%;top:40%}
+  .d-spark1{left:8%;top:14%;color:var(--cyan);font-size:22px}
+  .d-spark2{right:12%;top:18%;color:#C9B8FF;font-size:26px}
+  .d-dot1,.d-dot2,.d-dot3{width:8px;height:8px;background:var(--pink)}
+  .d-dot1{left:20%;top:6%}.d-dot2{right:22%;top:10%;background:var(--cyan)}.d-dot3{left:28%;top:12%;background:var(--violet)}
+  .pix-corner{position:absolute;left:0;bottom:0;width:180px;height:120px;z-index:0;opacity:.7;background:
+    linear-gradient(var(--pink),var(--pink)) 0 100%/24px 24px no-repeat,linear-gradient(#3D1A9E,#3D1A9E) 24px 100%/24px 24px no-repeat,linear-gradient(var(--violet),var(--violet)) 0 calc(100% - 24px)/24px 24px no-repeat,
+    linear-gradient(#5b1e8f,#5b1e8f) 48px 100%/24px 24px no-repeat,linear-gradient(var(--pink),var(--pink)) 24px calc(100% - 48px)/24px 24px no-repeat,linear-gradient(#3D1A9E,#3D1A9E) 0 calc(100% - 72px)/24px 24px no-repeat}
+  .universe{position:relative;overflow:hidden}
+  .uni-core{position:relative;display:flex;align-items:center;justify-content:center;min-width:420px}
+  .uni-art{position:absolute;opacity:.85}
+  .uni-art.left{width:110px;height:110px;left:-10px;bottom:-20px;image-rendering:pixelated}
+  .uni-art.right{width:190px;height:auto;right:-30px;bottom:-30px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(0,212,240,.35))}
+  .ring{position:relative;z-index:1}
+  @media (max-width:860px){.uni-core{min-width:0;min-height:220px}}
+  .creations-panel{background:rgba(255,255,255,.55);border:1.5px solid #DDD5F2;border-radius:16px;padding:16px}
+  .cta-pad{width:110px;height:auto;filter:drop-shadow(0 0 10px rgba(255,27,141,.5))}
+  .cta-t .c2{color:var(--cyan)}
+  .cta-t .d2{background:linear-gradient(90deg,#9A6BFF,#FF1B8D);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+  footer.wrap{background:#0b0826;margin-inline:calc(50% - 50vw);padding-inline:max(var(--gutter), calc(50vw - 600px));max-width:none;border-top:2px solid #2A1B6E}
+  .foot2{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
+  .foot-copy{text-align:center;color:#8b88b8;font-size:.8rem;margin:22px 0 6px;border-top:1px solid rgba(139,92,246,.25);padding-top:16px}
+  @media (max-width:860px){.foot2{grid-template-columns:1fr;justify-items:center;text-align:center}}
+  .foot-brand{display:flex;flex-direction:column;gap:6px}
+  .foot-sl{font:600 12px/1.3 var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .foot-sl b{color:var(--cyan);font-weight:600}
+  .foot2 .foot-links{justify-content:center;gap:26px}
+  .foot2 .foot-links a{font:600 13px/1.1 var(--body);text-transform:uppercase;letter-spacing:.06em;color:var(--text);display:flex;flex-direction:column;align-items:center}
+  .foot2 .foot-links a small{color:var(--pink);font-size:10px;margin-top:3px}
+  .copy{text-align:center;color:var(--muted);font-size:13px;margin:18px 0 6px}
 </style>
+
 </head>
 <body>
 <header class="hud home-nav">
@@ -673,9 +718,10 @@
     <nav aria-label="Navigation principale" class="mainnav">
       <a href="#bienvenue">Entreprise</a>
       <a href="#produit">Produits</a>
-      <a href="#garanties" class="nav-shop">Boutique<small>bientôt</small></a>
+      <a href="#garanties">Boutique<small>bientôt dispo</small></a>
       <a href="#a-propos">Qui sommes-nous ?</a>
       <a href="#liste">Formulaire</a>
+      <a href="#contact">Contact</a>
     </nav>
     <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">✉</span></a>
   </div>
@@ -684,9 +730,11 @@
 <main class="wrap" id="start">
   <!-- ACCUEIL -->
   <section class="hero2 bleed">
+    <div class="pix-corner" aria-hidden="true"></div>
     <div class="hero2-in">
       <div class="hero2-txt">
         <canvas class="spr hero-pad" data-sprite="pad" aria-hidden="true"></canvas>
+        <canvas class="spr deco d-heart" data-sprite="heart" aria-hidden="true"></canvas><canvas class="spr deco d-star" data-sprite="star" aria-hidden="true"></canvas><span class="deco d-spark1" aria-hidden="true">✦</span><span class="deco d-spark2" aria-hidden="true">✧</span><span class="deco d-dot1" aria-hidden="true"></span><span class="deco d-dot2" aria-hidden="true"></span><span class="deco d-dot3" aria-hidden="true"></span>
         <h1 class="hero-logo" aria-label="EMG"><span class="c">E</span><span class="w">M</span><span class="p">G</span></h1>
         <p class="hero-slogan">Rétro par <span class="p">passion.</span><br>Immersif par <span class="c">vision.</span></p>
         <p class="hero-lead">EMG réinvente l'expérience gaming en mêlant l'univers rétro aux technologies et aux expériences immersives d'aujourd'hui.</p>
@@ -785,7 +833,7 @@
         <p>L'héritage des jeux légendaires, des consoles mythiques et d'une culture qui nous inspire depuis toujours.</p>
         <a class="obtn pink sm" href="#a-propos">En savoir plus</a>
       </div>
-      <div class="uni-core" aria-hidden="true"><div class="ring"><span class="c">E</span><span class="w">M</span><span class="p">G</span></div></div>
+      <div class="uni-core" aria-hidden="true"><canvas class="spr uni-art left" data-sprite="pad"></canvas><div class="ring"><span class="c">E</span><span class="w">M</span><span class="p">G</span></div><img class="uni-art right" src="visor-real.webp" alt="" width="1060" height="710"></div>
       <div class="uni-side right">
         <div class="uni-head"><canvas class="spr" data-sprite="vr" aria-hidden="true"></canvas><h3 class="c">Immersif<br>par vision.</h3></div>
         <p>Les technologies d'aujourd'hui au service d'expériences toujours plus immersives, interactives et innovantes.</p>
@@ -794,17 +842,17 @@
     </div>
 
     <h2 class="pixel-title"><span aria-hidden="true">✦ ✧</span> Ce que nous créons <span aria-hidden="true">✧ ✦</span></h2>
-    <div class="creations">
+    <div class="creations-panel"><div class="creations">
       <article class="cre pink"><svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="#FF1B8D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="18" width="52" height="28" rx="14"/><path d="M18 26v12M12 32h12"/><circle cx="44" cy="28" r="2.5"/><circle cx="50" cy="34" r="2.5"/></svg><h3>Accessoires gaming</h3><p>Des accessoires pensés pour améliorer l'expérience et valoriser les performances.</p></article>
       <article class="cre blue"><svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="#2F7FE0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="20" width="52" height="24" rx="8"/><path d="M26 44l6-8 6 8"/><circle cx="20" cy="32" r="5"/><circle cx="44" cy="32" r="5"/></svg><h3>Immersion</h3><p>Des solutions pour rapprocher le joueur de son univers et vivre le jeu autrement.</p></article>
       <article class="cre gold"><svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="#E8A500" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 40c-6-4-9-10-9-16a19 19 0 0 1 38 0c0 6-3 12-9 16v6H22z"/><path d="M24 52h16M32 6V2M10 12 7 9M54 12l3-3"/></svg><h3>Innovation</h3><p>Nous explorons les nouvelles idées et technologies pour imaginer le gaming de demain.</p></article>
       <article class="cre violet"><svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="#7B3CF0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h28v14a14 14 0 0 1-28 0z"/><path d="M18 12H8c0 8 4 12 10 12M46 12h10c0 8-4 12-10 12M32 36v10M22 54h20M26 46h12v8H26z"/></svg><h3>Culture gaming</h3><p>Un univers inspiré par l'histoire du jeu vidéo et la passion qui nous rassemble.</p></article>
-    </div>
+    </div></div>
 
     <div class="cta-band">
-      <canvas class="spr" data-sprite="pad" aria-hidden="true"></canvas>
+      <svg class="cta-pad" viewBox="0 0 120 80" aria-hidden="true" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="padg" x1="0" x2="1"><stop offset="0" stop-color="#7B3CF0"/><stop offset="1" stop-color="#FF1B8D"/></linearGradient></defs><path stroke="url(#padg)" d="M30 14h60c14 0 24 12 26 30l3 18c1 8-8 12-14 6L92 56H28L15 68c-6 6-15 2-14-6l3-18C6 26 16 14 30 14z"/><path stroke="#FF8AC4" d="M32 30v16M24 38h16"/><circle cx="84" cy="32" r="3" stroke="#00D4F0"/><circle cx="94" cy="40" r="3" stroke="#00D4F0"/><circle cx="84" cy="48" r="3" stroke="#00D4F0"/><circle cx="74" cy="40" r="3" stroke="#00D4F0"/></svg>
       <div>
-        <p class="cta-t">Prêt à entrer dans<br>une <span>autre dimension</span> ?</p>
+        <p class="cta-t">Prêt à entrer dans<br>une <span class="c2">autre</span> <span class="d2">dimension</span> ?</p>
         <p class="cta-s">Rejoignez l'aventure EMG et préparez-vous à vivre le jeu autrement.</p>
       </div>
       <a class="obtn pink" href="#contact">Nous contacter <span aria-hidden="true">→</span></a>
@@ -1200,13 +1248,12 @@
 </main>
 
 <footer class="wrap">
-  <div class="foot-row">
-    <div><span class="brand" style="font-size:20px"><span class="c">E</span><span class="w">M</span><span class="p">G</span></span></div>
-    <nav class="foot-links" aria-label="Liens de bas de page"><a href="#bienvenue">Entreprise</a><a href="#produit">Produits</a><a href="#garanties">Boutique</a><a href="#a-propos">Qui sommes-nous ?</a><a href="#liste">Formulaire</a><a href="#contact">Contact</a></nav>
-    <div class="socials foot"><div class="socials foot"><a class="sbtn ig" href="https://www.instagram.com/emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg><span>Instagram</span></a><a class="sbtn tt" href="https://www.tiktok.com/@emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path></svg><span>TikTok</span></a><a class="sbtn fb" href="https://www.facebook.com/emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg><span>Facebook</span></a><a class="sbtn li" href="https://www.linkedin.com/company/emg-gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg><span>LinkedIn</span></a></div>
-    
-    <div class="pixel">Rétro par passion. Immersif par vision. © 2026 EMG</div>
+  <div class="foot2">
+    <div class="foot-brand"><span class="brand" style="font-size:34px"><span class="c">E</span><span class="w">M</span><span class="p">G</span></span><span class="foot-sl">Rétro par passion.<br><b>Immersif par vision.</b></span></div>
+    <nav class="foot-links" aria-label="Liens de bas de page"><a href="#bienvenue">Entreprise</a><a href="#produit">Produits</a><a href="#garanties">Boutique<small>bientôt dispo</small></a><a href="#a-propos">Qui sommes-nous ?</a><a href="#contact">Contact</a></nav>
+    <div class="socials foot"><a class="sbtn ig" href="https://www.instagram.com/emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg><span>Instagram</span></a><a class="sbtn tt" href="https://www.tiktok.com/@emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path></svg><span>TikTok</span></a><a class="sbtn fb" href="https://www.facebook.com/emg.gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg><span>Facebook</span></a><a class="sbtn li" href="https://www.linkedin.com/company/emg-gaming" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg><span>LinkedIn</span></a></div>
   </div>
+  <p class="foot-copy">© 2026 EMG · Tous droits réservés</p>
   <div class="legal-list">
   <details class="legal" id="mentions">
     <summary>Mentions légales</summary>
@@ -1763,6 +1810,5 @@
   }).observe(done, { attributes: true, attributeFilter: ['hidden'] });
 })();
 </script>
-
 </body>
 </html>
