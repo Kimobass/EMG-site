@@ -107,6 +107,29 @@ html{scroll-behavior:smooth}
 #cart .note{font-size:12px;color:#a9acd6;margin:10px 0 0}
 #cart button:focus-visible,.fab:focus-visible{outline:2px solid #12cfff;outline-offset:2px}
 .toast{max-width:min(360px,calc(100vw - 36px));line-height:1.35;bottom:76px}
+.mhead,.mlabel,.mtext,#formOpen,.fab.menu,#mnav{display:none}
+@media (max-width:700px){
+ #formOpen{display:block}
+ #contactForm{display:none}
+ #contactForm.open{display:flex;flex-direction:column;gap:6px;position:fixed;left:0;right:0;bottom:0;z-index:80;max-height:88vh;overflow:auto;padding:16px 16px 20px;background:#080a2b;border-top:1.5px solid #ff1bbd;box-shadow:0 -10px 40px rgba(0,0,0,.6);font:400 15px/1.3 Arial,sans-serif;color:#fff}
+ .mhead{display:flex;justify-content:space-between;align-items:center;font-size:17px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+ .mhead button{background:none;border:0;color:#fff;font-size:20px;padding:8px 12px}
+ .mlabel{display:block;font-size:13px;color:#c9c6e8;margin-top:6px}
+ #contactForm .form-input,#contactForm .form-select,#contactForm .form-message{position:static!important;width:100%!important;height:auto!important;font:400 16px/1.3 Arial,sans-serif!important;padding:12px!important;background:#10134a!important;color:#fff!important;border:1px solid #3a3f8f!important;border-radius:8px}
+ #contactForm .form-message{min-height:96px}
+ #contactForm ::placeholder{color:#8f93c9!important}
+ #contactForm .stars{position:static;height:auto;width:auto;display:flex;gap:4px}
+ #contactForm .star{position:static;width:46px;height:46px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23ff6fd8' stroke-width='1.6' stroke-linejoin='round' d='M12 2.2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.4 5.9 20.8l1.4-6.8L2.2 9.3l6.9-.8z'/%3E%3C/svg%3E");background-size:70%}
+ #contactForm .star.on{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff3fd0' stroke='%23ff8fe6' stroke-width='1.2' stroke-linejoin='round' d='M12 2.2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.4 5.9 20.8l1.4-6.8L2.2 9.3l6.9-.8z'/%3E%3C/svg%3E")}
+ #contactForm .send{position:static!important;width:auto!important;height:auto!important;margin-top:10px}
+ #contactForm .send button{position:static;width:100%!important;height:auto!important;padding:14px!important;border:1.5px solid #ff1bbd!important;border-radius:8px;background:#2a0b4a!important;color:#fff;font:700 14px Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+ .mtext{display:inline}
+ .fab.menu{display:inline-flex;left:14px;right:auto;border-color:#12cfff;box-shadow:0 0 18px rgba(18,207,255,.35)}
+ #mnav:not([hidden]){display:flex;flex-direction:column;position:fixed;left:14px;bottom:68px;z-index:80;min-width:230px;background:#080a2b;border:1.5px solid #12cfff;border-radius:12px;padding:8px;box-shadow:0 10px 40px rgba(0,0,0,.6);line-height:1.3}
+ #mnav a{color:#fff;text-decoration:none;font:700 15px Arial,sans-serif;padding:13px 14px;border-radius:8px}
+ #mnav a:active,#mnav a:hover{background:#151a55}
+ .toast{left:14px;right:14px;bottom:132px;max-width:none}
+}
 @media print{#bar,.fab,#cart,#shade,.toast{display:none!important}}
 </style>
 </head>
@@ -193,16 +216,18 @@ html{scroll-behavior:smooth}
 <a class="hot" style="left:50.8%;top:39%;width:19.8%;height:2.5%" href="https://www.google.com/maps/search/?api=1&query=123+Avenue+Jean+Jaur%C3%A8s+51100+Reims" target="_blank" rel="noopener" aria-label="Voir EMG Reims sur la carte (nouvel onglet)"></a>
 <a class="hot" style="left:4.2%;top:65.1%;width:20.2%;height:2.5%" href="#postuler" aria-label="Voir nos offres et postuler"></a>
 <!-- Functional contact form overlays aligned to the form shown in the supplied mockup -->
+<button type="button" id="formOpen" class="hot" style="left:44.3%;top:72.3%;width:53%;height:19%" aria-label="Ouvrir le formulaire : laisse-nous ton avis"></button>
 <form id="contactForm" novalidate>
-<input class="form-input" style="left:47.5%;top:74.55%;width:22.8%;height:1.95%" name="prenom" placeholder="Ex : Léa" aria-label="Ton prénom" autocomplete="given-name" required>
-<input class="form-input" style="left:71.4%;top:74.55%;width:22.9%;height:1.95%" name="email" type="email" placeholder="Ex : lea@mail.com" aria-label="Ton adresse e-mail" autocomplete="email" required>
-<select class="form-select" style="left:47.5%;top:78.2%;width:46.8%;height:1.95%" name="experience" aria-label="Ton expérience concerne" required>
+<div class="mhead"><strong>Laisse-nous ton avis</strong><button type="button" id="formClose" aria-label="Fermer le formulaire">✕</button></div>
+<span class="mlabel" aria-hidden="true">Ton prénom</span><input class="form-input" style="left:47.5%;top:74.55%;width:22.8%;height:1.95%" name="prenom" placeholder="Ex : Léa" aria-label="Ton prénom" autocomplete="given-name" required>
+<span class="mlabel" aria-hidden="true">Ton adresse e-mail</span><input class="form-input" style="left:71.4%;top:74.55%;width:22.9%;height:1.95%" name="email" type="email" placeholder="Ex : lea@mail.com" aria-label="Ton adresse e-mail" autocomplete="email" required>
+<span class="mlabel" aria-hidden="true">Ton expérience concerne</span><select class="form-select" style="left:47.5%;top:78.2%;width:46.8%;height:1.95%" name="experience" aria-label="Ton expérience concerne" required>
 <option value="">Choisis une option</option><option>Visite du complexe</option><option>Événement</option><option>Achat d'un produit</option><option>Session VR</option><option>Candidature</option><option>Autre demande</option>
 </select>
-<textarea class="form-message" style="left:47.5%;top:81.85%;width:46.8%;height:3.7%" name="avis" aria-label="Ton avis" placeholder="Partage ton expérience, ce que tu as aimé, ce qui pourrait être amélioré..." required></textarea>
-<div class="stars" role="radiogroup" aria-label="Ta note globale"><button type="button" class="star" role="radio" aria-checked="false" aria-label="1 étoile sur 5" data-v="1" style="left:47.5%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="2 étoiles sur 5" data-v="2" style="left:51.2%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="3 étoiles sur 5" data-v="3" style="left:54.9%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="4 étoiles sur 5" data-v="4" style="left:58.3%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="5 étoiles sur 5" data-v="5" style="left:63.0%"></button></div>
-<div style="position:absolute;left:75%;top:86.9%;width:19.4%;height:3%;z-index:21">
-<button class="hot" type="submit" aria-label="Envoyer mon avis" style="inset:0;border:0;background:transparent;width:100%;height:100%"></button>
+<span class="mlabel" aria-hidden="true">Ton message</span><textarea class="form-message" style="left:47.5%;top:81.85%;width:46.8%;height:3.7%" name="avis" aria-label="Ton avis" placeholder="Partage ton expérience, ce que tu as aimé, ce qui pourrait être amélioré..." required></textarea>
+<span class="mlabel" aria-hidden="true">Ta note globale</span><div class="stars" role="radiogroup" aria-label="Ta note globale"><button type="button" class="star" role="radio" aria-checked="false" aria-label="1 étoile sur 5" data-v="1" style="left:47.5%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="2 étoiles sur 5" data-v="2" style="left:51.2%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="3 étoiles sur 5" data-v="3" style="left:54.9%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="4 étoiles sur 5" data-v="4" style="left:58.3%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="5 étoiles sur 5" data-v="5" style="left:63.0%"></button></div>
+<div class="send" style="position:absolute;left:75%;top:86.9%;width:19.4%;height:3%;z-index:21">
+<button class="hot" type="submit" aria-label="Envoyer mon avis" style="inset:0;border:0;background:transparent;width:100%;height:100%"><span class="mtext" aria-hidden="true">Envoyer mon avis</span></button>
 </div>
 </form>
 </section>
@@ -217,6 +242,8 @@ html{scroll-behavior:smooth}
 <button id="cartBtn" class="fab" type="button" aria-haspopup="dialog" aria-controls="cart" hidden>
 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h9.3a1 1 0 0 0 1-.8L21 7H6"/></svg>
 <span>Panier</span><b id="cartCount">0</b></button>
+<button id="menuBtn" class="fab menu" type="button" aria-haspopup="dialog" aria-controls="mnav">☰ Menu</button>
+<nav id="mnav" aria-label="Menu" hidden><a href="#home">Accueil</a><a href="#entreprise">Entreprise</a><a href="#produits">Produits</a><a href="#boutique">Boutique · notre complexe</a><a href="#equipe">Qui sommes-nous ?</a><a href="#formulaire">Formulaire</a><a href="#contact">Contact</a></nav>
 <button id="topBtn" class="fab top" type="button" aria-label="Revenir en haut de la page" hidden>↑</button>
 <div id="shade" hidden></div>
 <aside id="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle" hidden>
@@ -282,7 +309,7 @@ function route() {
   if (!pages.includes(id) && !/^product-[1-9]$/.test(id)) id = 'home';
   setPage(id);
 }
-addEventListener('hashchange', route);
+addEventListener('hashchange', () => { form.classList.remove('open'); if (cartEl.hidden) shade.hidden = true; route(); });
 const topBtn = $('topBtn');
 addEventListener('scroll', () => { bar.classList.toggle('scrolled', scrollY > 8); topBtn.hidden = scrollY < 700; }, { passive: true });
 topBtn.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
@@ -325,10 +352,10 @@ function render() {
 function change(i, d) { const q = (cart[i] || 0) + d; if (q <= 0) delete cart[i]; else cart[i] = Math.min(q, 9); render(); }
 function addToCart(i) { change(i, 1); cartBtn.classList.remove('bump'); void cartBtn.offsetWidth; cartBtn.classList.add('bump'); say(PRODUCTS[i][0] + ' ajouté au panier.'); }
 function openCart() { lastFocus = document.activeElement; cartEl.hidden = shade.hidden = false; render(); $('cartClose').focus(); }
-function closeCart() { cartEl.hidden = shade.hidden = true; render(); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
-cartBtn.addEventListener('click', openCart); $('cartClose').addEventListener('click', closeCart); shade.addEventListener('click', closeCart);
+function closeCart() { cartEl.hidden = true; shade.hidden = !form.classList.contains('open'); render(); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+cartBtn.addEventListener('click', openCart); $('cartClose').addEventListener('click', closeCart); shade.addEventListener('click', () => { if (!cartEl.hidden) closeCart(); closeForm(); });
 $('cartClear').addEventListener('click', () => { cart = {}; render(); });
-addEventListener('keydown', e => { if (cartEl.hidden) return;
+addEventListener('keydown', e => { if (e.key === 'Escape') { closeForm(); mnav.hidden = true; } if (cartEl.hidden) return;
   if (e.key === 'Escape') closeCart();
   if (e.key === 'Tab') { const f = [...cartEl.querySelectorAll('button:not([disabled]):not([hidden])')].filter(b => b.offsetParent); if (!f.length) return;
     if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f.at(-1).focus(); }
@@ -342,8 +369,15 @@ $('cartOrder').addEventListener('click', () => {
 
 /* ---------- formulaire ---------- */
 let pending = null, rating = store.get('emg-note', 0);
-function prefill(option, text) { form.experience.value = option; if (text && !form.avis.value.trim()) form.avis.value = text; setTimeout(() => form.prenom.focus({ preventScroll: true }), 450); }
-anchors.formulaire[2] = () => { if (pending) { pending(); pending = null; } };
+const small = matchMedia('(max-width:700px)');
+function openForm() { if (!small.matches) return; form.classList.add('open'); shade.hidden = false; }
+function closeForm() { form.classList.remove('open'); if (cartEl.hidden) shade.hidden = true; }
+$('formOpen').addEventListener('click', () => { openForm(); form.prenom.focus(); }); $('formClose').addEventListener('click', closeForm);
+const mnav = $('mnav'), menuBtn = $('menuBtn');
+menuBtn.addEventListener('click', () => { mnav.hidden = !mnav.hidden; menuBtn.setAttribute('aria-expanded', !mnav.hidden); });
+mnav.addEventListener('click', () => { mnav.hidden = true; });
+function prefill(option, text) { openForm(); form.experience.value = option; if (text && !form.avis.value.trim()) form.avis.value = text; setTimeout(() => form.prenom.focus({ preventScroll: true }), 450); }
+anchors.formulaire[2] = () => { if (pending) { pending(); pending = null; } else openForm(); };
 const stars = [...document.querySelectorAll('.star')];
 function setRating(v) { rating = v; stars.forEach(s => { const on = +s.dataset.v <= v; s.classList.toggle('on', on); s.setAttribute('aria-checked', +s.dataset.v === v); s.tabIndex = (+s.dataset.v === (v || 1)) ? 0 : -1; }); }
 stars.forEach(s => { s.addEventListener('click', () => setRating(+s.dataset.v === rating ? 0 : +s.dataset.v));
@@ -363,9 +397,7 @@ form.addEventListener('submit', e => {
   if (!rating) { say('Choisis une note de 1 à 5 étoiles.'); stars[0].focus(); return; }
   const body = 'Prénom : ' + f.prenom.value.trim() + '\nE-mail : ' + f.email.value.trim() + '\nSujet : ' + f.experience.value + '\nNote : ' + rating + '/5\n\n' + f.avis.value.trim();
   location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('[EMG] ' + f.experience.value + ' — ' + f.prenom.value.trim()) + '&body=' + encodeURIComponent(body);
-  say('Merci ! Ton message est prêt : valide l\'envoi dans ta messagerie.');
-  if (/^Bonjour, je souhaite commander/.test(f.avis.value)) { cart = {}; render(); }
-  f.reset(); setRating(0); store.set('emg-form', {});
+  say('Ton message s\'ouvre dans ta messagerie : valide l\'envoi. Si rien ne s\'ouvre, écris à ' + MAIL + '.');
 });
 
 render(); route();
