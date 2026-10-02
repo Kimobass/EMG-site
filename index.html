@@ -4,7 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>EMG · Rétro par passion. Immersif par vision.</title>
-<meta name="description" content="EMG : accessoires gaming et VR, et un complexe immersif à Reims. Rétro par passion. Immersif par vision.">
+<meta name="description" content="EMG crée des accessoires gaming et VR et un complexe immersif à Reims : casque VR, gilet haptique, salles multijoueurs. Découvre nos produits et notre équipe.">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Accessoires gaming et VR, et un complexe immersif à Reims. Rétro par passion. Immersif par vision.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EMG","slogan":"Rétro par passion. Immersif par vision.","description":"EMG conçoit des accessoires et des expériences immersives pour le gaming et la réalité virtuelle.","founder":[{"@type":"Person","name":"Julien Ducrot-Grison"},{"@type":"Person","name":"Emilie Thouvenin"},{"@type":"Person","name":"Mylene Hoffmann"}]}</script>
 <meta name="theme-color" content="#050617">
 <meta property="og:title" content="EMG · Rétro par passion. Immersif par vision.">
 <meta property="og:image" content="assets/home.jpg">
@@ -60,6 +64,50 @@ html{scroll-behavior:smooth}
 .form-select{color:transparent;cursor:pointer;appearance:none;-webkit-appearance:none}
 .form-select:focus,.form-select:valid{color:#fff}
 .form-select option{color:#fff;background:#10134a}
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;line-height:1.4}
+.stars{position:absolute;left:0;top:87.25%;width:100%;height:2.1%;z-index:21}
+.star{position:absolute;top:0;height:100%;width:2.9%;border:0;padding:0;background:transparent center/78% no-repeat;cursor:pointer;border-radius:50%}
+.star.on{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff3fd0' stroke='%23ff8fe6' stroke-width='1.2' stroke-linejoin='round' d='M12 2.2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.4 5.9 20.8l1.4-6.8L2.2 9.3l6.9-.8z'/%3E%3C/svg%3E");filter:drop-shadow(0 0 6px rgba(255,63,208,.8))}
+.star:hover{background-color:rgba(255,63,208,.14)}
+.star:focus-visible{outline:2px solid #12cfff}
+.form-input.bad,.form-message.bad,.form-select.bad{box-shadow:0 0 0 2px #ff5a7a!important;background:#2a0f2e}
+.detail-hot.add{border-radius:6px;cursor:pointer;transition:background .15s,box-shadow .15s}
+.detail-hot.add:hover{background:rgba(255,255,255,.1);box-shadow:0 0 18px rgba(255,27,189,.45)}
+.spot{position:absolute;z-index:9;border:2px solid #12cfff;border-radius:10px;box-shadow:0 0 0 9999px rgba(5,6,23,.55),0 0 30px rgba(18,207,255,.6);pointer-events:none;opacity:0;transition:opacity .4s}
+.spot.on{opacity:1}
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#0b0d33;color:#fff;border:1.5px solid #ff1bbd;border-radius:999px;padding:11px 16px;font:700 14px/1 Arial,sans-serif;cursor:pointer;box-shadow:0 0 22px rgba(255,27,189,.4)}
+.fab[hidden],#cart[hidden],#shade[hidden]{display:none}
+.fab:hover{background:#151a55}
+.fab b{background:#ff1bbd;color:#fff;border-radius:999px;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:12px;padding:0 6px}
+.fab.top{bottom:72px;padding:11px 15px;border-color:#12cfff;box-shadow:0 0 18px rgba(18,207,255,.35)}
+.fab.bump{animation:bump .35s}
+@keyframes bump{50%{transform:scale(1.12)}}
+#shade{position:fixed;inset:0;z-index:70;background:rgba(3,4,18,.6)}
+#cart{position:fixed;top:0;right:0;bottom:0;z-index:80;width:min(400px,100%);background:#080a2b;border-left:1.5px solid #ff1bbd;box-shadow:-10px 0 40px rgba(0,0,0,.6);display:flex;flex-direction:column;font:400 15px/1.4 Arial,sans-serif;color:#fff}
+#cart header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #262a6b}
+#cart h2{margin:0;font-size:18px;letter-spacing:.06em;text-transform:uppercase}
+#cart header button{background:none;border:0;color:#fff;font-size:20px;cursor:pointer;padding:6px 10px;border-radius:6px}
+#cart header button:hover{background:#1a1f5c}
+#cartList{list-style:none;margin:0;padding:8px 20px;overflow:auto;flex:1}
+#cartList li{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:14px 0;border-bottom:1px solid #1c2060}
+#cartList .n{font-weight:700}
+#cartList .p{color:#ff6fd8;font-weight:700;text-align:right}
+#cartList .q{display:inline-flex;align-items:center;gap:6px}
+#cartList .q button{width:30px;height:30px;border-radius:6px;border:1px solid #3a3f8f;background:#10134a;color:#fff;font-size:16px;cursor:pointer}
+#cartList .q button:hover{border-color:#12cfff}
+#cartList .rm{background:none;border:0;color:#a9acd6;cursor:pointer;text-decoration:underline;font-size:13px;justify-self:end}
+#cartEmpty{padding:30px 20px;color:#a9acd6;flex:1;margin:0}
+#cart footer{padding:16px 20px 20px;border-top:1px solid #262a6b}
+#cart .tot{display:flex;justify-content:space-between;font-size:18px;margin:0 0 14px}
+#cart .cta{width:100%;padding:14px;border-radius:8px;border:1.5px solid #ff1bbd;background:#2a0b4a;color:#fff;font:700 14px Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:0 0 18px rgba(255,27,189,.35)}
+#cart .cta:hover{background:#3d1066}
+#cart .cta:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+#cart .ghost{width:100%;margin-top:8px;padding:10px;background:none;border:0;color:#a9acd6;cursor:pointer;text-decoration:underline;font-size:13px}
+#cart .note{font-size:12px;color:#a9acd6;margin:10px 0 0}
+#cart button:focus-visible,.fab:focus-visible{outline:2px solid #12cfff;outline-offset:2px}
+.toast{max-width:min(360px,calc(100vw - 36px));line-height:1.35;bottom:76px}
+@media print{#bar,.fab,#cart,#shade,.toast{display:none!important}}
 </style>
 </head>
 <body>
@@ -78,125 +126,252 @@ html{scroll-behavior:smooth}
 
 <!-- HOME -->
 <section id="home" class="page active">
-<img class="page-img" src="assets/home.jpg" width="2048" height="3072" fetchpriority="high" alt="Page d'accueil EMG : Rétro par passion. Immersif par vision.">
+<div class="sr"><h1 tabindex="-1">EMG — Rétro par passion. Immersif par vision.</h1><p>EMG réinvente l'expérience gaming en mêlant l'univers rétro aux technologies et aux expériences immersives d'aujourd'hui. Accessoires gaming, immersion, innovation et culture gaming.</p></div>
+<img class="page-img" src="assets/home.jpg" srcset="assets/home-1024.jpg 1024w, assets/home.jpg 2048w" sizes="100vw" width="2048" height="3072" fetchpriority="high" alt="Page d'accueil EMG : Rétro par passion. Immersif par vision.">
 <!-- header -->
 <!-- main buttons -->
-<a class="hot" style="left:10.5%;top:28.7%;width:18%;height:3.3%" href="#entreprise"></a>
-<a class="hot" style="left:30%;top:28.7%;width:20%;height:3.3%" href="#produits"></a>
-<a class="hot" style="left:48%;top:53.8%;width:22%;height:3.2%" href="#entreprise"></a>
-<a class="hot" style="left:7%;top:68%;width:14%;height:3%" href="#entreprise"></a>
-<a class="hot" style="left:68%;top:68%;width:14%;height:3%" href="#produits"></a>
-<a class="hot" style="left:73%;top:91.2%;width:19%;height:4%" href="#contact"></a>
+<a class="hot" style="left:10.5%;top:28.7%;width:18%;height:3.3%" href="#entreprise" aria-label="Découvrir l'entreprise"></a>
+<a class="hot" style="left:30%;top:28.7%;width:20%;height:3.3%" href="#produits" aria-label="Voir les produits"></a>
+<a class="hot" style="left:48%;top:53.8%;width:22%;height:3.2%" href="#entreprise" aria-label="Découvrir l'entreprise"></a>
+<a class="hot" style="left:7.6%;top:70.2%;width:13%;height:2.4%" href="#entreprise" aria-label="Découvrir l'entreprise"></a>
+<a class="hot" style="left:67.4%;top:70.2%;width:13%;height:2.4%" href="#produits" aria-label="Voir les produits"></a>
+<a class="hot" style="left:72%;top:89.7%;width:18.6%;height:3%" href="#contact" aria-label="Nous contacter"></a>
 </section>
 
 <!-- ENTERPRISE -->
 <section id="entreprise" class="page">
-<img class="page-img" data-src="assets/entreprise.jpg" width="2048" height="3072" alt="EMG Entreprise">
-<a class="hot" style="left:7%;top:24%;width:24%;height:4%" href="#equipe"></a>
+<div class="sr"><h1 tabindex="-1">Notre entreprise, notre vision</h1><p>EMG est une entreprise passionnée qui imagine, conçoit et développe des expériences immersives. Notre mission : rendre l'expérience de jeu plus immersive et fun pour tous les joueurs. Nos valeurs : passion, innovation, immersion, communauté, responsabilité.</p></div>
+<img class="page-img" data-src="assets/entreprise.jpg" data-srcset="assets/entreprise-1024.jpg 1024w, assets/entreprise.jpg 2048w" sizes="100vw" width="2048" height="3072" alt="EMG Entreprise">
+<a class="hot" style="left:7%;top:24%;width:24%;height:4%" href="#equipe" aria-label="Découvrir l'équipe"></a>
 </section>
 
 <!-- PRODUCTS -->
 <section id="produits" class="page">
-<img class="page-img" data-src="assets/produits.jpg" width="2048" height="3072" alt="EMG Produits">
+<div class="sr"><h1 tabindex="-1">Nos produits, conçus pour réinventer l'expérience de jeu</h1><p>Casque VR, manette VR, tapis VR omnidirectionnel, exosquelette gaming, casque audio 3D, gilet haptique, station de charge, tracker corporel et EMG Hub.</p></div>
+<img class="page-img" data-src="assets/produits.jpg" data-srcset="assets/produits-1024.jpg 1024w, assets/produits.jpg 2048w" sizes="100vw" width="2048" height="3072" alt="EMG Produits">
+<a class="hot" style="left:6.8%;top:24.7%;width:24.4%;height:3%" href="#produits-liste" aria-label="Voir tous les produits"></a>
+<a class="hot" style="left:33%;top:24.7%;width:19.3%;height:3%" href="#entreprise" aria-label="Notre approche"></a>
+<a class="hot" style="left:69.3%;top:85.1%;width:23.6%;height:3.1%" href="#produits-liste" aria-label="Voir tous les produits"></a>
 <!-- 9 product cards -->
-<a class="hot" style="left:4%;top:36%;width:29%;height:14.5%" href="#product-1"></a>
-<a class="hot" style="left:35.8%;top:36%;width:29%;height:14.5%" href="#product-2"></a>
-<a class="hot" style="left:67%;top:36%;width:29%;height:14.5%" href="#product-3"></a>
-<a class="hot" style="left:4%;top:51%;width:29%;height:14.5%" href="#product-4"></a>
-<a class="hot" style="left:35.8%;top:51%;width:29%;height:14.5%" href="#product-5"></a>
-<a class="hot" style="left:67%;top:51%;width:29%;height:14.5%" href="#product-6"></a>
-<a class="hot" style="left:4%;top:66%;width:29%;height:14.5%" href="#product-7"></a>
-<a class="hot" style="left:35.8%;top:66%;width:29%;height:14.5%" href="#product-8"></a>
-<a class="hot" style="left:67%;top:66%;width:29%;height:14.5%" href="#product-9"></a>
+<a class="hot" style="left:4%;top:36%;width:29%;height:14.5%" href="#product-1" aria-label="Voir la fiche : Casque VR EMG"></a>
+<a class="hot" style="left:35.8%;top:36%;width:29%;height:14.5%" href="#product-2" aria-label="Voir la fiche : Manette VR EMG"></a>
+<a class="hot" style="left:67%;top:36%;width:29%;height:14.5%" href="#product-3" aria-label="Voir la fiche : Tapis VR omnidirectionnel"></a>
+<a class="hot" style="left:4%;top:51%;width:29%;height:14.5%" href="#product-4" aria-label="Voir la fiche : Exosquelette gaming EMG"></a>
+<a class="hot" style="left:35.8%;top:51%;width:29%;height:14.5%" href="#product-5" aria-label="Voir la fiche : Casque audio 3D EMG"></a>
+<a class="hot" style="left:67%;top:51%;width:29%;height:14.5%" href="#product-6" aria-label="Voir la fiche : Gilet haptique EMG"></a>
+<a class="hot" style="left:4%;top:66%;width:29%;height:14.5%" href="#product-7" aria-label="Voir la fiche : Station de charge EMG"></a>
+<a class="hot" style="left:35.8%;top:66%;width:29%;height:14.5%" href="#product-8" aria-label="Voir la fiche : Tracker corporel EMG"></a>
+<a class="hot" style="left:67%;top:66%;width:29%;height:14.5%" href="#product-9" aria-label="Voir la fiche : EMG Hub"></a>
 </section>
 
 <!-- BOUTIQUE -->
 <section id="boutique" class="page">
-<img class="page-img" data-src="assets/boutique.jpg" width="2048" height="3072" alt="EMG Reims">
-<a class="hot" style="left:29%;top:23%;width:24%;height:5%" href="#contact"></a>
+<div class="sr"><h1 tabindex="-1">EMG Reims : bien plus qu'une boutique, un lieu pour jouer ensemble</h1><p>Notre complexe à Reims : espace boutique, salles VR multijoueurs et salles à thème (rétro gaming, science-fiction, fantasy, racing, zombie). Informations pratiques et horaires d'ouverture.</p></div>
+<img class="page-img" data-src="assets/boutique.jpg" data-srcset="assets/boutique-1024.jpg 1024w, assets/boutique.jpg 2048w" sizes="100vw" width="2048" height="3072" alt="EMG Reims">
+<a class="hot" style="left:5.8%;top:22.9%;width:21.6%;height:2.6%" href="#boutique-espace" aria-label="Découvrir le complexe"></a>
+<a class="hot" style="left:29.5%;top:22.9%;width:21.6%;height:2.6%" href="#reserver" aria-label="Réserver une session VR"></a>
+<a class="hot" style="left:58.5%;top:72.7%;width:20.3%;height:2.6%" href="#reserver" aria-label="Réserver maintenant une session de groupe"></a>
+<a class="hot" style="left:41%;top:87.5%;width:18.2%;height:2.5%" href="https://www.google.com/maps/search/?api=1&query=123+Avenue+Jean+Jaur%C3%A8s+51100+Reims" target="_blank" rel="noopener" aria-label="Voir l'itinéraire vers EMG Reims (nouvel onglet)"></a>
 </section>
 
 <!-- TEAM -->
 <section id="equipe" class="page">
-<img class="page-img" data-src="assets/equipe.jpg" width="2048" height="3072" alt="Équipe EMG">
-<a class="hot" style="left:6%;top:24%;width:22%;height:5%" href="#entreprise"></a>
+<div class="sr"><h1 tabindex="-1">Qui sommes-nous ? Une équipe complémentaire pour donner vie à EMG</h1><p>Nos fondateurs : Julien Ducrot-Grison (design), Emilie Thouvenin (finance) et Mylene Hoffmann (communication). Trois parcours, une même ambition.</p></div>
+<img class="page-img" data-src="assets/equipe.jpg" data-srcset="assets/equipe-1024.jpg 1024w, assets/equipe.jpg 2048w" sizes="100vw" width="2048" height="3072" alt="Équipe EMG">
+<a class="hot" style="left:6%;top:23.2%;width:17.3%;height:2.6%" href="#entreprise" aria-label="Notre histoire"></a>
+<a class="hot" style="left:24.8%;top:23.2%;width:17.3%;height:2.6%" href="#fondateurs" aria-label="Notre équipe : les fondateurs"></a>
+<a class="hot" style="left:5.8%;top:77.4%;width:22.5%;height:2.8%" href="#postuler" aria-label="Découvrir notre équipe et nous rejoindre"></a>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="page">
-<img class="page-img" data-src="assets/contact.jpg" width="2048" height="3072" alt="EMG Contact">
-<a class="hot" style="left:7%;top:24%;width:22%;height:5%" href="#contact-form"></a>
-<a class="hot" style="left:29%;top:24%;width:22%;height:5%" href="#boutique"></a>
+<div class="sr"><h1 tabindex="-1">Une question ? Parlons ensemble</h1><p>Nos moyens de contact, nos horaires, nos offres pour rejoindre l'équipe et le formulaire pour donner ton avis.</p></div>
+<img class="page-img" data-src="assets/contact.jpg" data-srcset="assets/contact-1024.jpg 1024w, assets/contact.jpg 2048w" sizes="100vw" width="2048" height="3072" alt="EMG Contact">
+<a class="hot" style="left:6.8%;top:23.2%;width:20.2%;height:2.3%" href="#contact-form" aria-label="Nos moyens de contact"></a>
+<a class="hot" style="left:28.4%;top:23.2%;width:19.6%;height:2.3%" href="#boutique" aria-label="Découvrir le complexe EMG Reims"></a>
 
+<a class="hot" style="left:50.8%;top:39%;width:19.8%;height:2.5%" href="https://www.google.com/maps/search/?api=1&query=123+Avenue+Jean+Jaur%C3%A8s+51100+Reims" target="_blank" rel="noopener" aria-label="Voir EMG Reims sur la carte (nouvel onglet)"></a>
+<a class="hot" style="left:4.2%;top:65.1%;width:20.2%;height:2.5%" href="#postuler" aria-label="Voir nos offres et postuler"></a>
 <!-- Functional contact form overlays aligned to the form shown in the supplied mockup -->
-<form id="contactForm" onsubmit="submitContact(event)">
-<input class="form-input" style="left:47.5%;top:74.55%;width:22.8%;height:1.95%" name="prenom" placeholder="Ex : Léa" required>
-<input class="form-input" style="left:71.4%;top:74.55%;width:22.9%;height:1.95%" name="email" type="email" placeholder="Ex : lea@mail.com" required>
-<select class="form-select" style="left:47.5%;top:78.2%;width:46.8%;height:1.95%" name="experience" required>
-<option value="">Choisis une option</option><option>Visite du complexe</option><option>Événement</option><option>Achat d'un produit</option><option>Session VR</option>
+<form id="contactForm" novalidate>
+<input class="form-input" style="left:47.5%;top:74.55%;width:22.8%;height:1.95%" name="prenom" placeholder="Ex : Léa" aria-label="Ton prénom" autocomplete="given-name" required>
+<input class="form-input" style="left:71.4%;top:74.55%;width:22.9%;height:1.95%" name="email" type="email" placeholder="Ex : lea@mail.com" aria-label="Ton adresse e-mail" autocomplete="email" required>
+<select class="form-select" style="left:47.5%;top:78.2%;width:46.8%;height:1.95%" name="experience" aria-label="Ton expérience concerne" required>
+<option value="">Choisis une option</option><option>Visite du complexe</option><option>Événement</option><option>Achat d'un produit</option><option>Session VR</option><option>Candidature</option><option>Autre demande</option>
 </select>
-<textarea class="form-message" style="left:47.5%;top:81.85%;width:46.8%;height:3.7%" name="avis" placeholder="Partage ton expérience, ce que tu as aimé, ce qui pourrait être amélioré..." required></textarea>
+<textarea class="form-message" style="left:47.5%;top:81.85%;width:46.8%;height:3.7%" name="avis" aria-label="Ton avis" placeholder="Partage ton expérience, ce que tu as aimé, ce qui pourrait être amélioré..." required></textarea>
+<div class="stars" role="radiogroup" aria-label="Ta note globale"><button type="button" class="star" role="radio" aria-checked="false" aria-label="1 étoile sur 5" data-v="1" style="left:47.5%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="2 étoiles sur 5" data-v="2" style="left:51.2%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="3 étoiles sur 5" data-v="3" style="left:54.9%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="4 étoiles sur 5" data-v="4" style="left:58.3%"></button><button type="button" class="star" role="radio" aria-checked="false" aria-label="5 étoiles sur 5" data-v="5" style="left:63.0%"></button></div>
 <div style="position:absolute;left:75%;top:86.9%;width:19.4%;height:3%;z-index:21">
-<button class="hot" type="submit" style="inset:0;border:0;background:transparent"></button>
+<button class="hot" type="submit" aria-label="Envoyer mon avis" style="inset:0;border:0;background:transparent;width:100%;height:100%"></button>
 </div>
 </form>
 </section>
 
 <div id="detail" class="detail-wrap">
-<img data-src="assets/produits-details.jpg" width="2048" height="3072" alt="Fiches produits EMG">
+<div class="sr"><h1 tabindex="-1">Fiches produits EMG</h1></div>
+<img data-src="assets/produits-details.jpg" data-srcset="assets/produits-details-1024.jpg 1024w, assets/produits-details.jpg 2048w" sizes="100vw" width="2048" height="3072" alt="Fiches produits EMG">
 <div id="detailZones"></div>
 </div>
 
+
+<button id="cartBtn" class="fab" type="button" aria-haspopup="dialog" aria-controls="cart" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h9.3a1 1 0 0 0 1-.8L21 7H6"/></svg>
+<span>Panier</span><b id="cartCount">0</b></button>
+<button id="topBtn" class="fab top" type="button" aria-label="Revenir en haut de la page" hidden>↑</button>
+<div id="shade" hidden></div>
+<aside id="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle" hidden>
+<header><h2 id="cartTitle">Ton panier</h2><button type="button" id="cartClose" aria-label="Fermer le panier">✕</button></header>
+<ul id="cartList"></ul>
+<p id="cartEmpty">Ton panier est vide.</p>
+<footer><p class="tot"><span>Total</span><b id="cartTotal">0,00 €</b></p>
+<button type="button" id="cartOrder" class="cta">Passer commande</button>
+<button type="button" id="cartClear" class="ghost">Vider le panier</button>
+<p class="note">La commande se finalise par message : l'équipe te répond pour le paiement et le retrait.</p></footer>
+</aside>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-const pages=['home','entreprise','produits','boutique','equipe','contact'];
-const titles={home:'EMG · Rétro par passion. Immersif par vision.',entreprise:'Notre entreprise · EMG',produits:'Nos produits · EMG',boutique:'EMG Reims, notre complexe · EMG',equipe:'Qui sommes-nous ? · EMG',contact:'Contact · EMG',detail:'Fiches produits · EMG'};
-// ancres à l'intérieur d'une page : [page, position verticale dans la maquette]
-const anchors={formulaire:['contact',.705],'contact-form':['contact',.275]};
-const bar=document.getElementById('bar');
-function load(el){const i=el.querySelector('img[data-src]');if(i){i.src=i.dataset.src;i.removeAttribute('data-src');}return el.querySelector('img');}
-function setPage(id,frac){
-  const isDetail=/^product-\d+$/.test(id);
-  const el=isDetail?document.getElementById('detail'):(document.getElementById(id)||document.getElementById('home'));
-  document.querySelectorAll('.page,.detail-wrap').forEach(p=>p.classList.toggle('active',p===el));
-  const img=load(el);
-  const head=isDetail?load(document.getElementById('produits')):img;
-  bar.style.backgroundImage='url("'+head.getAttribute('src')+'")';
-  document.title=titles[isDetail?'detail':el.id]||titles.home;
-  const go=()=>window.scrollTo({top:frac?Math.max(0,el.offsetTop+el.offsetHeight*frac-bar.offsetHeight-12):0,behavior:frac?'smooth':'instant'});
-  go(); if(frac&&!img.complete) img.addEventListener('load',go,{once:true});
+(() => {
+'use strict';
+const PRODUCTS = [["Casque VR EMG", 249.9], ["Manette VR EMG", 99.9], ["Tapis VR omnidirectionnel", 149.9], ["Exosquelette gaming EMG", 399.9], ["Casque audio 3D EMG", 129.9], ["Gilet haptique EMG", 299.9], ["Station de charge EMG", 59.9], ["Tracker corporel EMG", 129.9], ["EMG Hub", 89.9]];
+const MAIL = 'emg.gaming@gmail.com';
+const pages = ['home','entreprise','produits','boutique','equipe','contact'];
+const titles = {home:'EMG · Rétro par passion. Immersif par vision.',entreprise:'Notre entreprise · EMG',produits:'Nos produits · EMG',boutique:'EMG Reims, notre complexe · EMG',equipe:'Qui sommes-nous ? · EMG',contact:'Contact · EMG',detail:'Fiches produits · EMG'};
+// ancres internes : [page, position verticale dans la maquette, action]
+const anchors = {
+  formulaire: ['contact', .705],
+  'contact-form': ['contact', .275],
+  'boutique-espace': ['boutique', .285],
+  'produits-liste': ['produits', .315],
+  fondateurs: ['equipe', .27],
+  postuler: ['contact', .705, () => prefill('Candidature', 'Bonjour, je souhaite rejoindre l\'équipe EMG.\nPoste qui m\'intéresse : \nMes atouts : ')],
+  reserver: ['contact', .705, () => prefill('Session VR', 'Bonjour, je souhaite réserver une session VR.\nDate souhaitée : \nNombre de joueurs : ')]
+};
+const $ = id => document.getElementById(id);
+const bar = $('bar'), toast = $('toast'), form = $('contactForm');
+const euro = n => n.toFixed(2).replace('.', ',') + ' €';
+const store = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+                set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+let toastT; function say(msg) { toast.textContent = msg; toast.style.display = 'block'; clearTimeout(toastT); toastT = setTimeout(() => toast.style.display = 'none', 3800); }
+
+/* ---------- navigation ---------- */
+function load(el) { const i = el.querySelector('img[data-src]'); if (i) { i.srcset = i.dataset.srcset || ''; i.src = i.dataset.src; i.removeAttribute('data-src'); } return el.querySelector('img'); }
+function setBar(img) { const set = () => { bar.style.backgroundImage = 'url("' + (img.currentSrc || img.src) + '")'; }; set(); if (!img.complete) img.addEventListener('load', set, { once: true }); }
+let first = true;
+function setPage(id, frac, after) {
+  const m = /^product-(\d)$/.exec(id);
+  const el = m ? $('detail') : ($(id) || $('home'));
+  const changed = !el.classList.contains('active');
+  document.querySelectorAll('.page,.detail-wrap').forEach(p => p.classList.toggle('active', p === el));
+  const img = load(el);
+  setBar(m ? load($('produits')) : img);
+  document.title = titles[m ? 'detail' : el.id] || titles.home;
+  let spot;
+  if (m) { const k = +m[1] - 1, r = Math.floor(k / 3), c = k % 3; frac = r / 3;
+    spot = $('spot'); Object.assign(spot.style, { left: c * 33.333 + '%', top: r * 33.333 + '%', width: '33.333%', height: '33.333%' }); }
+  const go = () => window.scrollTo({ top: frac ? Math.max(0, el.offsetTop + el.offsetHeight * frac - bar.offsetHeight - 10) : 0, behavior: frac && !changed ? 'smooth' : 'instant' });
+  go(); if (frac && !img.complete) img.addEventListener('load', go, { once: true });
+  if (spot) { spot.classList.add('on'); setTimeout(() => spot.classList.remove('on'), 1700); }
+  if (!first && changed) { const h = el.querySelector('.sr h1'); if (h) h.focus({ preventScroll: true }); }
+  first = false;
+  if (after) after();
 }
-function route(){
-  let id=location.hash.slice(1)||'home';
-  if(anchors[id]) return setPage(anchors[id][0],anchors[id][1]);
-  if(!pages.includes(id) && !/^product-\d+$/.test(id)) id='home';
+function route() {
+  let id = location.hash.slice(1) || 'home';
+  if (anchors[id]) return setPage(...anchors[id]);
+  if (!pages.includes(id) && !/^product-[1-9]$/.test(id)) id = 'home';
   setPage(id);
 }
-function submitContact(e){
-  e.preventDefault();
-  const toast=document.getElementById('toast');
-  toast.textContent='Merci ! Ton avis a bien été saisi.';
-  toast.style.display='block'; e.target.reset();
-  setTimeout(()=>toast.style.display='none',3500);
-}
-window.addEventListener('hashchange',route);
-window.addEventListener('scroll',()=>bar.classList.toggle('scrolled',scrollY>8),{passive:true});
-route();
-// les autres pages se chargent en arrière-plan : les clics suivants sont instantanés
-window.addEventListener('load',()=>{const q=[...document.querySelectorAll('img[data-src]')];
-  (function next(){const i=q.shift();if(!i)return;if(!i.dataset.src)return next();const p=new Image();p.onload=p.onerror=next;p.src=i.dataset.src;})();});
+addEventListener('hashchange', route);
+const topBtn = $('topBtn');
+addEventListener('scroll', () => { bar.classList.toggle('scrolled', scrollY > 8); topBtn.hidden = scrollY < 700; }, { passive: true });
+topBtn.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+addEventListener('load', () => { const q = [...document.querySelectorAll('img[data-src]')];
+  (function next() { const i = q.shift(); if (!i) return; if (!i.dataset.src) return next(); const p = new Image(); p.onload = p.onerror = next; p.srcset = i.dataset.srcset || ''; p.sizes = '100vw'; p.src = i.dataset.src; })(); });
 
-const zones=document.getElementById('detailZones');
-for(let i=0;i<9;i++){
-  const a=document.createElement('a');
-  const r=Math.floor(i/3),c=i%3;
-  a.className='detail-hot';
-  a.href='#produits'; a.setAttribute('aria-label','Retour aux produits');
-  a.style.left=(c*33.333)+'%'; a.style.top=(r*33.333)+'%';
-  a.style.width='33.333%'; a.style.height='4%';
-  zones.appendChild(a);
+/* ---------- fiches produits : retour + ajout au panier ---------- */
+const zones = $('detailZones');
+const spotEl = document.createElement('div'); spotEl.id = 'spot'; spotEl.className = 'spot'; zones.appendChild(spotEl);
+const ADD = [[20.5, 10.5], [52, 9.8], [87.3, 10.7]];
+PRODUCTS.forEach(([name], i) => { const r = Math.floor(i / 3), c = i % 3;
+  const back = document.createElement('a'); back.className = 'detail-hot'; back.href = '#produits'; back.setAttribute('aria-label', 'Retour à la liste des produits');
+  Object.assign(back.style, { left: c * 33.333 + '%', top: r * 33.333 + '%', width: '33.333%', height: '3.6%' }); zones.appendChild(back);
+  const b = document.createElement('button'); b.type = 'button'; b.className = 'detail-hot add'; b.setAttribute('aria-label', 'Ajouter au panier : ' + name);
+  Object.assign(b.style, { left: ADD[c][0] + '%', top: (r * 33.333 + 20.6) + '%', width: ADD[c][1] + '%', height: '3.5%', border: 0, background: 'transparent', padding: 0 });
+  b.addEventListener('click', () => addToCart(i)); zones.appendChild(b); });
+
+/* ---------- panier ---------- */
+let cart = store.get('emg-cart', {});
+const cartBtn = $('cartBtn'), cartEl = $('cart'), shade = $('shade'), list = $('cartList');
+let lastFocus;
+function count() { return Object.values(cart).reduce((a, b) => a + b, 0); }
+function total() { return Object.entries(cart).reduce((a, [i, q]) => a + PRODUCTS[i][1] * q, 0); }
+function render() {
+  const n = count();
+  cartBtn.hidden = n === 0 && cartEl.hidden; $('cartCount').textContent = n;
+  cartBtn.setAttribute('aria-label', 'Ouvrir le panier, ' + n + ' article' + (n > 1 ? 's' : ''));
+  list.innerHTML = '';
+  Object.entries(cart).forEach(([i, q]) => { const li = document.createElement('li');
+    li.innerHTML = '<span class="n"></span><span class="p"></span><span class="q"><button type="button" data-d="-1">−</button><span></span><button type="button" data-d="1">+</button></span><button type="button" class="rm">Retirer</button>';
+    li.querySelector('.n').textContent = PRODUCTS[i][0]; li.querySelector('.p').textContent = euro(PRODUCTS[i][1] * q);
+    li.querySelector('.q span').textContent = q;
+    li.querySelectorAll('.q button').forEach(b => { b.setAttribute('aria-label', (b.dataset.d > 0 ? 'Augmenter' : 'Diminuer') + ' la quantité de ' + PRODUCTS[i][0]); b.onclick = () => change(i, +b.dataset.d); });
+    const rm = li.querySelector('.rm'); rm.setAttribute('aria-label', 'Retirer ' + PRODUCTS[i][0]); rm.onclick = () => change(i, -99);
+    list.appendChild(li); });
+  $('cartEmpty').hidden = n > 0; list.hidden = n === 0;
+  $('cartTotal').textContent = euro(total()); $('cartOrder').disabled = n === 0; $('cartClear').hidden = n === 0;
+  store.set('emg-cart', cart);
 }
+function change(i, d) { const q = (cart[i] || 0) + d; if (q <= 0) delete cart[i]; else cart[i] = Math.min(q, 9); render(); }
+function addToCart(i) { change(i, 1); cartBtn.classList.remove('bump'); void cartBtn.offsetWidth; cartBtn.classList.add('bump'); say(PRODUCTS[i][0] + ' ajouté au panier.'); }
+function openCart() { lastFocus = document.activeElement; cartEl.hidden = shade.hidden = false; render(); $('cartClose').focus(); }
+function closeCart() { cartEl.hidden = shade.hidden = true; render(); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+cartBtn.addEventListener('click', openCart); $('cartClose').addEventListener('click', closeCart); shade.addEventListener('click', closeCart);
+$('cartClear').addEventListener('click', () => { cart = {}; render(); });
+addEventListener('keydown', e => { if (cartEl.hidden) return;
+  if (e.key === 'Escape') closeCart();
+  if (e.key === 'Tab') { const f = [...cartEl.querySelectorAll('button:not([disabled]):not([hidden])')].filter(b => b.offsetParent); if (!f.length) return;
+    if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f.at(-1).focus(); }
+    else if (!e.shiftKey && document.activeElement === f.at(-1)) { e.preventDefault(); f[0].focus(); } } });
+$('cartOrder').addEventListener('click', () => {
+  const lines = Object.entries(cart).map(([i, q]) => '- ' + q + ' × ' + PRODUCTS[i][0] + ' : ' + euro(PRODUCTS[i][1] * q));
+  const msg = 'Bonjour, je souhaite commander :\n' + lines.join('\n') + '\nTotal : ' + euro(total());
+  closeCart(); pending = () => prefill("Achat d'un produit", msg);
+  if (location.hash === '#formulaire') route(); else location.hash = 'formulaire';
+});
+
+/* ---------- formulaire ---------- */
+let pending = null, rating = store.get('emg-note', 0);
+function prefill(option, text) { form.experience.value = option; if (text && !form.avis.value.trim()) form.avis.value = text; setTimeout(() => form.prenom.focus({ preventScroll: true }), 450); }
+anchors.formulaire[2] = () => { if (pending) { pending(); pending = null; } };
+const stars = [...document.querySelectorAll('.star')];
+function setRating(v) { rating = v; stars.forEach(s => { const on = +s.dataset.v <= v; s.classList.toggle('on', on); s.setAttribute('aria-checked', +s.dataset.v === v); s.tabIndex = (+s.dataset.v === (v || 1)) ? 0 : -1; }); }
+stars.forEach(s => { s.addEventListener('click', () => setRating(+s.dataset.v === rating ? 0 : +s.dataset.v));
+  s.addEventListener('keydown', e => { const d = { ArrowRight: 1, ArrowUp: 1, ArrowLeft: -1, ArrowDown: -1 }[e.key]; if (!d) return; e.preventDefault(); const v = Math.min(5, Math.max(1, (rating || 0) + d)); setRating(v); stars[v - 1].focus(); }); });
+setRating(0);
+['prenom', 'email', 'avis'].forEach(k => { form[k].value = store.get('emg-form', {})[k] || ''; });
+form.addEventListener('input', e => { e.target.classList.remove('bad'); store.set('emg-form', { prenom: form.prenom.value, email: form.email.value, avis: form.avis.value }); });
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const f = form, errs = [];
+  const bad = (el, msg) => { el.classList.add('bad'); errs.push([el, msg]); };
+  if (!f.prenom.value.trim()) bad(f.prenom, 'Indique ton prénom.');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.value.trim())) bad(f.email, 'Indique une adresse e-mail valide.');
+  if (!f.experience.value) bad(f.experience, 'Choisis ce que concerne ton expérience.');
+  if (f.avis.value.trim().length < 5) bad(f.avis, 'Écris ton message (quelques mots).');
+  if (errs.length) { say(errs[0][1]); errs[0][0].focus(); return; }
+  if (!rating) { say('Choisis une note de 1 à 5 étoiles.'); stars[0].focus(); return; }
+  const body = 'Prénom : ' + f.prenom.value.trim() + '\nE-mail : ' + f.email.value.trim() + '\nSujet : ' + f.experience.value + '\nNote : ' + rating + '/5\n\n' + f.avis.value.trim();
+  location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('[EMG] ' + f.experience.value + ' — ' + f.prenom.value.trim()) + '&body=' + encodeURIComponent(body);
+  say('Merci ! Ton message est prêt : valide l\'envoi dans ta messagerie.');
+  if (/^Bonjour, je souhaite commander/.test(f.avis.value)) { cart = {}; render(); }
+  f.reset(); setRating(0); store.set('emg-form', {});
+});
+
+render(); route();
+window.EMG = { addToCart, openCart, cart: () => cart };
+})();
+
 </script>
 </body>
 </html>
